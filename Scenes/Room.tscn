@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://do772t0imr2cp"]
+
+[node name="Art Gallry" type="Node2D" unique_id=2018137933]
+
+[node name="Floor" type="ColorRect" parent="." unique_id=1620552954]
+offset_right = 100.0
+offset_bottom = 40.0
+
+[node name="Top Wall" type="ColorRect" parent="." unique_id=1874643076]
+z_index = 1
+offset_right = 100.0
+offset_bottom = 1.0
+color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+
+[node name="Left Wall" type="ColorRect" parent="." unique_id=945975550]
+z_index = 1
+offset_right = 1.0
+offset_bottom = 40.0
+color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+
+[node name="Bottom wall" type="ColorRect" parent="." unique_id=200560796]
+z_index = 1
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 39.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_vertical = 0
+color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+
+[node name="Right Wall" type="ColorRect" parent="." unique_id=761586931]
+z_index = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 99.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.80416864, 0.6193118, 0.13859153, 1)
