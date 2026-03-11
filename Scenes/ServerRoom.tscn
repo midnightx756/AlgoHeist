@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cyf2ktfuo1ne7"]
+
+[ext_resource type="PackedScene" uid="uid://b437tk4kqtgdb" path="res://Scenes/Rack.tscn" id="1_32ypq"]
+
+[node name="ServerRoom" type="Node2D" unique_id=2018137933]
+scale = Vector2(64, 64)
+
+[node name="Floor" type="ColorRect" parent="." unique_id=1620552954]
+offset_right = 100.0
+offset_bottom = 40.0
+
+[node name="Top Wall" type="ColorRect" parent="." unique_id=1874643076]
+z_index = 1
+offset_right = 100.0
+offset_bottom = 1.0
+color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+
+[node name="Left Wall" type="ColorRect" parent="." unique_id=945975550]
+z_index = 1
+offset_right = 1.0
+offset_bottom = 40.0
+color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+
+[node name="Bottom wall" type="ColorRect" parent="." unique_id=200560796]
+z_index = 1
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 39.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_vertical = 0
+color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+
+[node name="Right Wall" type="ColorRect" parent="." unique_id=761586931]
+z_index = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 99.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+
+[node name="Server" parent="." unique_id=1348484573 instance=ExtResource("1_32ypq")]
+position = Vector2(8.046875, 13.859375)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server2" parent="." unique_id=807506263 instance=ExtResource("1_32ypq")]
+position = Vector2(21.59375, 13.859375)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server3" parent="." unique_id=895337868 instance=ExtResource("1_32ypq")]
+position = Vector2(35.140625, 13.859375)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server4" parent="." unique_id=1360176955 instance=ExtResource("1_32ypq")]
+position = Vector2(48.53125, 13.859375)
+scale = Vector2(0.2, 0.2)
