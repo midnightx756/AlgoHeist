@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bgqehyqy64vxi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1q35e"]
+bg_color = Color(0.015686275, 0, 0.23137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsw5c"]
+bg_color = Color(0.6115015, 0.70828706, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eus85"]
+bg_color = Color(0.014961919, 0, 0.23220661, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo6mr"]
+bg_color = Color(0.18452361, 0.91533685, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3ytv"]
+bg_color = Color(0.6117647, 0.70980394, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q35e"]
+size = Vector2(128, 84)
+
+[node name="Computer" type="Node2D" unique_id=925157900]
+
+[node name="Computer" type="StaticBody2D" parent="." unique_id=1157813045]
+
+[node name="Panel" type="Panel" parent="Computer" unique_id=2092224553]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_1q35e")
+
+[node name="Keypad" type="Panel" parent="Computer" unique_id=1206762783]
+offset_left = -64.0
+offset_top = -128.0
+offset_right = 64.0
+offset_bottom = -64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jsw5c")
+
+[node name="Body" type="Panel" parent="Computer" unique_id=1915753332]
+offset_left = -64.0
+offset_top = -208.0
+offset_right = 64.0
+offset_bottom = -128.0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_eus85")
+
+[node name="Screen" type="Panel" parent="Computer" unique_id=1948219219]
+offset_left = -60.0
+offset_top = -204.0
+offset_right = 60.0
+offset_bottom = -132.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bo6mr")
+
+[node name="Panel2" type="Panel" parent="Computer" unique_id=1337941642]
+offset_left = -64.0
+offset_top = -228.0
+offset_right = 64.0
+offset_bottom = -208.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v3ytv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer" unique_id=281349993]
+position = Vector2(0, -42)
+shape = SubResource("RectangleShape2D_1q35e")

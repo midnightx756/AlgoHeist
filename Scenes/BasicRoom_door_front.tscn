@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://c6fr85vrltnwe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt2g3"]
+size = Vector2(99.875, 1.046875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_quaci"]
+size = Vector2(0.9375, 48.96875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rme4"]
+size = Vector2(1.015625, 49.046875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7wnj"]
+size = Vector2(45, 1)
+
+[node name="Art Gallery" type="Node2D" unique_id=1386878256]
+
+[node name="Walls" type="Node2D" parent="." unique_id=1395996928]
+position = Vector2(-50, -20)
+
+[node name="Floor" type="ColorRect" parent="Walls" unique_id=1943996786]
+z_index = -8
+offset_top = 1.0
+offset_right = 100.0
+offset_bottom = 49.0
+
+[node name="Top Wall" type="ColorRect" parent="Walls" unique_id=256025550]
+z_index = -6
+offset_top = -19.390625
+offset_right = 100.0
+offset_bottom = 0.609375
+color = Color(0.5764706, 0.47058824, 0, 1)
+
+[node name="Thickness of top wall" type="ColorRect" parent="Walls" unique_id=722955209]
+z_index = -5
+offset_left = -0.046875
+offset_top = -18.9375
+offset_right = 99.953125
+offset_bottom = -17.9375
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Right Wall" type="ColorRect" parent="Walls" unique_id=1175554138]
+z_index = -5
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 99.0
+offset_top = -19.0625
+offset_right = 100.0
+offset_bottom = 20.9375
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1, 1.475625)
+color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+
+[node name="Left Wall" type="ColorRect" parent="Walls" unique_id=26901487]
+z_index = -5
+offset_top = -18.9375
+offset_right = 1.0
+offset_bottom = 21.0625
+scale = Vector2(1, 1.4725001)
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=1117533648]
+z_index = -4
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 39.0
+offset_right = 45.0
+offset_bottom = 49.0
+grow_vertical = 0
+color = Color(0.5764706, 0.47058824, 0, 1)
+
+[node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=568175024]
+z_index = -2
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 38.90625
+offset_right = 45.0
+offset_bottom = 39.90625
+grow_vertical = 0
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=82546682]
+z_index = -4
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 39.0
+offset_right = 100.0
+offset_bottom = 49.0
+grow_vertical = 0
+color = Color(0.5764706, 0.47058824, 0, 1)
+
+[node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=1658636026]
+z_index = -2
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 38.90625
+offset_right = 100.0
+offset_bottom = 39.90625
+grow_vertical = 0
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Collider" type="StaticBody2D" parent="Walls" unique_id=940579900]
+
+[node name="Back" type="CollisionShape2D" parent="Walls/Collider" unique_id=2052762326]
+position = Vector2(50.078125, 0.546875)
+shape = SubResource("RectangleShape2D_bt2g3")
+debug_color = Color(0.8045305, 0.4150963, 0.11233396, 0.41960785)
+
+[node name="Left" type="CollisionShape2D" parent="Walls/Collider" unique_id=1056220499]
+position = Vector2(0.515625, 24.53125)
+shape = SubResource("RectangleShape2D_quaci")
+debug_color = Color(0.87120444, 0.34801129, 0.08871875, 0.41960785)
+
+[node name="Right" type="CollisionShape2D" parent="Walls/Collider" unique_id=2034902418]
+position = Vector2(99.50781, 24.492188)
+shape = SubResource("RectangleShape2D_0rme4")
+debug_color = Color(0.7674996, 0.44600385, 0.0839582, 0.41960785)
+
+[node name="Front" type="CollisionShape2D" parent="Walls/Collider" unique_id=387314914]
+position = Vector2(22.5, 48.5)
+shape = SubResource("RectangleShape2D_y7wnj")
+
+[node name="Front2" type="CollisionShape2D" parent="Walls/Collider" unique_id=1328614957]
+position = Vector2(77.5, 48.5)
+shape = SubResource("RectangleShape2D_y7wnj")

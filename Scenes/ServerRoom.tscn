@@ -1,64 +1,233 @@
 [gd_scene format=3 uid="uid://cyf2ktfuo1ne7"]
 
 [ext_resource type="PackedScene" uid="uid://b437tk4kqtgdb" path="res://Scenes/Rack.tscn" id="1_32ypq"]
+[ext_resource type="PackedScene" uid="uid://bgqehyqy64vxi" path="res://Scenes/Computer.tscn" id="2_y5crd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5crd"]
+size = Vector2(99.875, 1.046875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4m53"]
+size = Vector2(0.9375, 48.96875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xcjn"]
+size = Vector2(1.015625, 49.046875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a21ox"]
+size = Vector2(45, 1)
 
 [node name="ServerRoom" type="Node2D" unique_id=2018137933]
 scale = Vector2(64, 64)
 
-[node name="Floor" type="ColorRect" parent="." unique_id=1620552954]
+[node name="Walls" type="Node2D" parent="." unique_id=1376334247]
+position = Vector2(-50, -20)
+
+[node name="Floor" type="ColorRect" parent="Walls" unique_id=28434771]
+z_index = -8
+offset_top = 1.0
 offset_right = 100.0
-offset_bottom = 40.0
+offset_bottom = 49.0
 
-[node name="Top Wall" type="ColorRect" parent="." unique_id=1874643076]
-z_index = 1
+[node name="Top Wall" type="ColorRect" parent="Walls" unique_id=2125430952]
+z_index = -6
+offset_top = -19.390625
 offset_right = 100.0
-offset_bottom = 1.0
-color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+offset_bottom = 0.609375
+color = Color(0.5764706, 0.47058824, 0, 1)
 
-[node name="Left Wall" type="ColorRect" parent="." unique_id=945975550]
-z_index = 1
-offset_right = 1.0
-offset_bottom = 40.0
-color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+[node name="Thickness of top wall" type="ColorRect" parent="Walls" unique_id=2048811399]
+z_index = -5
+offset_left = -0.046875
+offset_top = -18.9375
+offset_right = 99.953125
+offset_bottom = -17.9375
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
-[node name="Bottom wall" type="ColorRect" parent="." unique_id=200560796]
-z_index = 1
-custom_minimum_size = Vector2(0, 1)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = 39.0
-offset_right = 100.0
-offset_bottom = 40.0
-grow_vertical = 0
-color = Color(0.80416864, 0.6193118, 0.13859153, 1)
-
-[node name="Right Wall" type="ColorRect" parent="." unique_id=761586931]
-z_index = 1
+[node name="Right Wall" type="ColorRect" parent="Walls" unique_id=809633772]
+z_index = -5
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 99.0
+offset_top = -19.0625
 offset_right = 100.0
-offset_bottom = 40.0
+offset_bottom = 20.9375
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(1, 1.475625)
 color = Color(0.80416864, 0.6193118, 0.13859153, 1)
 
-[node name="Server" parent="." unique_id=1348484573 instance=ExtResource("1_32ypq")]
-position = Vector2(8.046875, 13.859375)
+[node name="Left Wall" type="ColorRect" parent="Walls" unique_id=794330016]
+z_index = -5
+offset_top = -18.9375
+offset_right = 1.0
+offset_bottom = 21.0625
+scale = Vector2(1, 1.4725001)
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=1412301299]
+z_index = -4
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 39.0
+offset_right = 45.0
+offset_bottom = 49.0
+grow_vertical = 0
+color = Color(0.5764706, 0.47058824, 0, 1)
+
+[node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=1011612351]
+z_index = -2
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 38.90625
+offset_right = 45.0
+offset_bottom = 39.90625
+grow_vertical = 0
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=1862869635]
+z_index = -4
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 39.0
+offset_right = 100.0
+offset_bottom = 49.0
+grow_vertical = 0
+color = Color(0.5764706, 0.47058824, 0, 1)
+
+[node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=587659019]
+z_index = -2
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 38.90625
+offset_right = 100.0
+offset_bottom = 39.90625
+grow_vertical = 0
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Collider" type="StaticBody2D" parent="Walls" unique_id=2004157521]
+
+[node name="Back" type="CollisionShape2D" parent="Walls/Collider" unique_id=1126475518]
+position = Vector2(50.078125, 0.546875)
+shape = SubResource("RectangleShape2D_y5crd")
+debug_color = Color(0.8045305, 0.4150963, 0.11233396, 0.41960785)
+
+[node name="Left" type="CollisionShape2D" parent="Walls/Collider" unique_id=161395429]
+position = Vector2(0.515625, 24.53125)
+shape = SubResource("RectangleShape2D_m4m53")
+debug_color = Color(0.87120444, 0.34801129, 0.08871875, 0.41960785)
+
+[node name="Right" type="CollisionShape2D" parent="Walls/Collider" unique_id=175887210]
+position = Vector2(99.50781, 24.492188)
+shape = SubResource("RectangleShape2D_2xcjn")
+debug_color = Color(0.7674996, 0.44600385, 0.0839582, 0.41960785)
+
+[node name="Front" type="CollisionShape2D" parent="Walls/Collider" unique_id=2013576143]
+position = Vector2(22.5, 48.5)
+shape = SubResource("RectangleShape2D_a21ox")
+
+[node name="Front2" type="CollisionShape2D" parent="Walls/Collider" unique_id=1841384324]
+position = Vector2(77.5, 48.5)
+shape = SubResource("RectangleShape2D_a21ox")
+
+[node name="Servers" type="Node2D" parent="." unique_id=413158820]
+position = Vector2(-50, -20)
+
+[node name="Server" parent="Servers" unique_id=1348484573 instance=ExtResource("1_32ypq")]
+position = Vector2(8.046875, 3.703125)
 scale = Vector2(0.2, 0.2)
 
-[node name="Server2" parent="." unique_id=807506263 instance=ExtResource("1_32ypq")]
-position = Vector2(21.59375, 13.859375)
+[node name="Server2" parent="Servers" unique_id=807506263 instance=ExtResource("1_32ypq")]
+position = Vector2(21.59375, 3.703126)
 scale = Vector2(0.2, 0.2)
 
-[node name="Server3" parent="." unique_id=895337868 instance=ExtResource("1_32ypq")]
-position = Vector2(35.140625, 13.859375)
+[node name="Server3" parent="Servers" unique_id=895337868 instance=ExtResource("1_32ypq")]
+position = Vector2(35.140625, 3.703126)
 scale = Vector2(0.2, 0.2)
 
-[node name="Server4" parent="." unique_id=1360176955 instance=ExtResource("1_32ypq")]
-position = Vector2(48.53125, 13.859375)
+[node name="Server4" parent="Servers" unique_id=1360176955 instance=ExtResource("1_32ypq")]
+position = Vector2(92.0625, 3.703125)
 scale = Vector2(0.2, 0.2)
+
+[node name="Server5" parent="Servers" unique_id=1892882692 instance=ExtResource("1_32ypq")]
+position = Vector2(64.875, 3.703125)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server6" parent="Servers" unique_id=692214061 instance=ExtResource("1_32ypq")]
+position = Vector2(78.56251, 3.7031248)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server7" parent="Servers" unique_id=569657743 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(21.46875, 19.25)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server8" parent="Servers" unique_id=1775102161 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(35.015625, 19.25)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server9" parent="Servers" unique_id=1066024003 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(48.54687, 19.25)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server10" parent="Servers" unique_id=71639478 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(91.95312, 19.25)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server11" parent="Servers" unique_id=1959642569 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(8.078133, 19.25)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server12" parent="Servers" unique_id=976687230 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(78.40624, 19.25)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server13" parent="Servers" unique_id=1268122020 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(91.796875, 33.875)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server14" parent="Servers" unique_id=1630052776 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(64.70312, 33.859375)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server15" parent="Servers" unique_id=1417695154 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(35.00001, 33.875)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server16" parent="Servers" unique_id=1257250940 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(21.453127, 33.875)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server17" parent="Servers" unique_id=1519620289 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(7.921875, 33.875)
+scale = Vector2(0.2, 0.2)
+
+[node name="Server18" parent="Servers" unique_id=926229628 instance=ExtResource("1_32ypq")]
+z_index = 1
+position = Vector2(78.40624, 33.875)
+scale = Vector2(0.2, 0.2)
+
+[node name="Computer" parent="." unique_id=925157900 instance=ExtResource("2_y5crd")]
+position = Vector2(-0.09375, -11.312498)
+scale = Vector2(0.12, 0.078)

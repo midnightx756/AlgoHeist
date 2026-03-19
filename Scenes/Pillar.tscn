@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://ynwk43wd4q6a"]
+
+[ext_resource type="Script" uid="uid://bge5eu7pnxfhy" path="res://Scripts/pillar.gd" id="1_0xi52"]
+[ext_resource type="Shader" uid="uid://takey1blgxyp" path="res://Scripts/Pillar.gdshader" id="2_qocnt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xi52"]
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color(0, 0, 0, 0.72156864)
+shadow_size = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qocnt"]
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color(0, 0, 0, 0.6862745)
+shadow_size = 28
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrxsb"]
+shadow_color = Color(0, 0, 0, 0.91764706)
+shadow_size = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_py6tj"]
+bg_color = Color(0.82748455, 0.8274846, 0.8274844, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jrxsb"]
+shader = ExtResource("2_qocnt")
+
+[node name="Pillar" type="Node2D" unique_id=1611744533]
+script = ExtResource("1_0xi52")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=797920811]
+position = Vector2(-141.00002, -761)
+scale = Vector2(1.9749217, 1.5349883)
+color = Color(0.6, 0.6, 0.6, 1)
+polygon = PackedVector2Array(-196.17978, 494.9812, 353.77493, 494.9812, 255.3338, -1281.9956, -115.1101, -1281.9956)
+
+[node name="Panel" type="Panel" parent="." unique_id=2124440406]
+z_index = 5
+offset_left = -405.0
+offset_top = -2758.0
+offset_right = 405.0
+offset_bottom = -2728.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0xi52")
+
+[node name="Panel2" type="Panel" parent="." unique_id=2108958179]
+offset_left = -440.0
+offset_top = -2898.0
+offset_right = 440.0
+offset_bottom = -2748.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qocnt")
+
+[node name="Panel3" type="Panel" parent="." unique_id=233136200]
+z_index = 5
+offset_left = -550.0
+offset_top = -2954.0
+offset_right = 550.0
+offset_bottom = -2864.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jrxsb")
+
+[node name="Top Floor" type="Panel" parent="." unique_id=228316362]
+z_index = 6
+offset_left = -550.0
+offset_top = -3753.0
+offset_right = 550.0
+offset_bottom = -2953.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_py6tj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=332116994]
+material = SubResource("ShaderMaterial_jrxsb")
+offset_left = -529.0
+offset_top = -116.0
+offset_right = -489.0
+offset_bottom = -76.0
+scale = Vector2(27.098791, 6.0659556)
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1877326169]
+position = Vector2(-16, 0)
+points = PackedVector2Array(-278, -2649, -424, -12)
+width = 20.0
+
+[node name="Line2D2" type="Line2D" parent="." unique_id=999252878]
+position = Vector2(16, 0)
+scale = Vector2(-1, 1)
+points = PackedVector2Array(-278, -2649, -424, -12)
+width = 20.0
+
+[node name="Line2D3" type="Line2D" parent="." unique_id=742908227]
+points = PackedVector2Array(-180, -2636, -326, 25)
+width = 20.0
+
+[node name="Line2D4" type="Line2D" parent="." unique_id=710678673]
+scale = Vector2(-1, 1)
+points = PackedVector2Array(-180, -2636, -326, 25)
+width = 20.0
+
+[node name="Line2D5" type="Line2D" parent="." unique_id=2056240043]
+points = PackedVector2Array(-66, -2628, -196, 42)
+width = 20.0
+
+[node name="Line2D6" type="Line2D" parent="." unique_id=1813076848]
+scale = Vector2(-1, 1)
+points = PackedVector2Array(-66, -2628, -196, 42)
+width = 20.0
