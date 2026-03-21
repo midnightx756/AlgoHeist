@@ -1,0 +1,21 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+*.translation
+export_presets.cfg
+
+# C++ / SCons build junk (Don't push these!)
+.sconsign.dblite
+obj/
+bin/
+lib/
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+
+# Editors
+.vscode/
+.idea/
+*.swp

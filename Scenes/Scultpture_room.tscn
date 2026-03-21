@@ -1,41 +1,41 @@
-[gd_scene format=3 uid="uid://c6fr85vrltnwe"]
+[gd_scene format=3 uid="uid://piotcij3n0l1"]
 
-[ext_resource type="Script" uid="uid://b6qt1584i7iqu" path="res://Scripts/Level_change.gd" id="1_bljg6"]
+[ext_resource type="Script" uid="uid://b6qt1584i7iqu" path="res://Scripts/Level_change.gd" id="1_l8j0i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt2g3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_338xv"]
 size = Vector2(99.875, 1.046875)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_quaci"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k3o2"]
 size = Vector2(0.9375, 48.96875)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rme4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yths2"]
 size = Vector2(1.015625, 49.046875)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7wnj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qq72"]
 size = Vector2(45, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywg0w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwtxx"]
 size = Vector2(10, 1.125)
 
-[node name="Art Gallery" type="Node2D" unique_id=1386878256]
+[node name="Node2D" type="Node2D" unique_id=236250369]
 
-[node name="Walls" type="Node2D" parent="." unique_id=1395996928]
+[node name="Walls" type="Node2D" parent="." unique_id=1958675005]
 position = Vector2(-50, -20)
 
-[node name="Floor" type="ColorRect" parent="Walls" unique_id=1943996786]
+[node name="Floor" type="ColorRect" parent="Walls" unique_id=1801662344]
 z_index = -8
 offset_top = 1.0
 offset_right = 100.0
 offset_bottom = 49.0
 
-[node name="Top Wall" type="ColorRect" parent="Walls" unique_id=256025550]
+[node name="Top Wall" type="ColorRect" parent="Walls" unique_id=435394401]
 z_index = -6
 offset_top = -19.390625
 offset_right = 100.0
 offset_bottom = 0.609375
 color = Color(0.5764706, 0.47058824, 0, 1)
 
-[node name="Thickness of top wall" type="ColorRect" parent="Walls" unique_id=722955209]
+[node name="Thickness of top wall" type="ColorRect" parent="Walls" unique_id=1824285557]
 z_index = -5
 offset_left = -0.046875
 offset_top = -18.9375
@@ -43,7 +43,7 @@ offset_right = 99.953125
 offset_bottom = -17.9375
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
-[node name="Right Wall" type="ColorRect" parent="Walls" unique_id=1175554138]
+[node name="Right Wall" type="ColorRect" parent="Walls" unique_id=2127168190]
 z_index = -5
 anchors_preset = 3
 anchor_left = 1.0
@@ -59,7 +59,7 @@ grow_vertical = 0
 scale = Vector2(1, 1.475625)
 color = Color(0.80416864, 0.6193118, 0.13859153, 1)
 
-[node name="Left Wall" type="ColorRect" parent="Walls" unique_id=26901487]
+[node name="Left Wall" type="ColorRect" parent="Walls" unique_id=1391755555]
 z_index = -5
 offset_top = -18.9375
 offset_right = 1.0
@@ -67,7 +67,7 @@ offset_bottom = 21.0625
 scale = Vector2(1, 1.4725001)
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
-[node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=1117533648]
+[node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=2045977426]
 z_index = -4
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
@@ -79,7 +79,7 @@ offset_bottom = 49.0
 grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
-[node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=568175024]
+[node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=41251187]
 z_index = -2
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
@@ -91,7 +91,7 @@ offset_bottom = 39.90625
 grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
-[node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=82546682]
+[node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=674823926]
 z_index = -4
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
@@ -104,7 +104,7 @@ offset_bottom = 49.0
 grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
-[node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=1658636026]
+[node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=338787457]
 z_index = -2
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
@@ -117,37 +117,37 @@ offset_bottom = 39.90625
 grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
-[node name="Collider" type="StaticBody2D" parent="Walls" unique_id=940579900]
+[node name="Collider" type="StaticBody2D" parent="Walls" unique_id=1723827001]
 
-[node name="Back" type="CollisionShape2D" parent="Walls/Collider" unique_id=2052762326]
+[node name="Back" type="CollisionShape2D" parent="Walls/Collider" unique_id=523492260]
 position = Vector2(50.078125, 0.546875)
-shape = SubResource("RectangleShape2D_bt2g3")
+shape = SubResource("RectangleShape2D_338xv")
 debug_color = Color(0.8045305, 0.4150963, 0.11233396, 0.41960785)
 
-[node name="Left" type="CollisionShape2D" parent="Walls/Collider" unique_id=1056220499]
+[node name="Left" type="CollisionShape2D" parent="Walls/Collider" unique_id=203817584]
 position = Vector2(0.515625, 24.53125)
-shape = SubResource("RectangleShape2D_quaci")
+shape = SubResource("RectangleShape2D_1k3o2")
 debug_color = Color(0.87120444, 0.34801129, 0.08871875, 0.41960785)
 
-[node name="Right" type="CollisionShape2D" parent="Walls/Collider" unique_id=2034902418]
+[node name="Right" type="CollisionShape2D" parent="Walls/Collider" unique_id=888532080]
 position = Vector2(99.50781, 24.492188)
-shape = SubResource("RectangleShape2D_0rme4")
+shape = SubResource("RectangleShape2D_yths2")
 debug_color = Color(0.7674996, 0.44600385, 0.0839582, 0.41960785)
 
-[node name="Front" type="CollisionShape2D" parent="Walls/Collider" unique_id=387314914]
+[node name="Front" type="CollisionShape2D" parent="Walls/Collider" unique_id=1955327138]
 position = Vector2(22.5, 48.5)
-shape = SubResource("RectangleShape2D_y7wnj")
+shape = SubResource("RectangleShape2D_0qq72")
 
-[node name="Front2" type="CollisionShape2D" parent="Walls/Collider" unique_id=1328614957]
+[node name="Front2" type="CollisionShape2D" parent="Walls/Collider" unique_id=2072540797]
 position = Vector2(77.5, 48.5)
-shape = SubResource("RectangleShape2D_y7wnj")
+shape = SubResource("RectangleShape2D_0qq72")
 
-[node name="Area2D" type="Area2D" parent="Walls" unique_id=927698282]
+[node name="Area2D" type="Area2D" parent="Walls" unique_id=2090900231]
 position = Vector2(50, 48.125)
-script = ExtResource("1_bljg6")
+script = ExtResource("1_l8j0i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=1202566069]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=1088824512]
 position = Vector2(0, 0.3)
-shape = SubResource("RectangleShape2D_ywg0w")
+shape = SubResource("RectangleShape2D_hwtxx")
 
 [connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]

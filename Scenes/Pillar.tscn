@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://ynwk43wd4q6a"]
 
-[ext_resource type="Script" uid="uid://bge5eu7pnxfhy" path="res://Scripts/pillar.gd" id="1_0xi52"]
 [ext_resource type="Shader" uid="uid://takey1blgxyp" path="res://Scripts/Pillar.gdshader" id="2_qocnt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xi52"]
@@ -28,7 +27,6 @@ bg_color = Color(0.82748455, 0.8274846, 0.8274844, 1)
 shader = ExtResource("2_qocnt")
 
 [node name="Pillar" type="Node2D" unique_id=1611744533]
-script = ExtResource("1_0xi52")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=797920811]
 position = Vector2(-141.00002, -761)

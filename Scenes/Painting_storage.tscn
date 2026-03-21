@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvc520osrfs3e"]
 
 [ext_resource type="PackedScene" uid="uid://ynwk43wd4q6a" path="res://Scenes/Pillar.tscn" id="1_ic3a0"]
+[ext_resource type="Script" uid="uid://cqa48n7vue4mw" path="res://Scripts/painting_storage.gd" id="1_vkfkr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8gsj"]
 
@@ -10,7 +11,11 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ic3a0"]
 size = Vector2(510, 255)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_366ul"]
+bg_color = Color(0.92941177, 0.7882353, 0.40392157, 1)
+
 [node name="Painting Stand" type="Node2D" unique_id=499393629]
+script = ExtResource("1_vkfkr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=910913930]
 
@@ -58,28 +63,32 @@ polygon = PackedVector2Array(317, -308, -1, -442, -1, -776, 317, -602)
 [node name="Pillar" parent="StaticBody2D/Pillars" unique_id=1611744533 instance=ExtResource("1_ic3a0")]
 position = Vector2(-201, -17.490067)
 scale = Vector2(0.1, 0.1)
-script = null
 
 [node name="Pillar2" parent="StaticBody2D/Pillars" unique_id=806962598 instance=ExtResource("1_ic3a0")]
 position = Vector2(197, -17.490067)
 scale = Vector2(0.1, 0.1)
-script = null
 
 [node name="Pillar 1 Back" parent="StaticBody2D/Pillars" unique_id=714036991 instance=ExtResource("1_ic3a0")]
 z_index = -4
 position = Vector2(197, -230.49007)
 scale = Vector2(0.1, 0.1)
-script = null
 
 [node name="Pillar 2 back" parent="StaticBody2D/Pillars" unique_id=1757224495 instance=ExtResource("1_ic3a0")]
 z_index = -4
 position = Vector2(-201, -230.49007)
 scale = Vector2(0.1, 0.1)
-script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1957506228]
 position = Vector2(1, 268)
 shape = SubResource("RectangleShape2D_ic3a0")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=711506722]
-position = Vector2(0, -165)
+[node name="Panel" type="Panel" parent="." unique_id=1296482665]
+offset_left = -139.0
+offset_top = -302.0
+offset_right = -94.0
+offset_bottom = -257.0
+scale = Vector2(6.1566887, 5.0886536)
+theme_override_styles/panel = SubResource("StyleBoxFlat_366ul")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel" unique_id=1533615099]
+position = Vector2(0, -204)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cyf2ktfuo1ne7"]
 
 [ext_resource type="PackedScene" uid="uid://b437tk4kqtgdb" path="res://Scenes/Rack.tscn" id="1_32ypq"]
+[ext_resource type="Script" uid="uid://b6qt1584i7iqu" path="res://Scripts/Level_change.gd" id="1_m4m53"]
 [ext_resource type="PackedScene" uid="uid://bgqehyqy64vxi" path="res://Scenes/Computer.tscn" id="2_y5crd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5crd"]
@@ -14,6 +15,9 @@ size = Vector2(1.015625, 49.046875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a21ox"]
 size = Vector2(45, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktpbq"]
+size = Vector2(10, 1.125)
 
 [node name="ServerRoom" type="Node2D" unique_id=2018137933]
 scale = Vector2(64, 64)
@@ -140,6 +144,14 @@ shape = SubResource("RectangleShape2D_a21ox")
 [node name="Front2" type="CollisionShape2D" parent="Walls/Collider" unique_id=1841384324]
 position = Vector2(77.5, 48.5)
 shape = SubResource("RectangleShape2D_a21ox")
+
+[node name="Area2D" type="Area2D" parent="Walls" unique_id=1628440448]
+position = Vector2(50, 48.125)
+script = ExtResource("1_m4m53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=754174025]
+position = Vector2(0, 0.3)
+shape = SubResource("RectangleShape2D_ktpbq")
 
 [node name="Servers" type="Node2D" parent="." unique_id=413158820]
 position = Vector2(-50, -20)

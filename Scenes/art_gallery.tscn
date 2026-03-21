@@ -1,6 +1,33 @@
 [gd_scene format=3 uid="uid://bilchrafuqfdx"]
 
+[ext_resource type="Shader" uid="uid://duooku50yu2m3" path="res://Scripts/Marble_Floor.gdshader" id="1_0bbt2"]
 [ext_resource type="PackedScene" uid="uid://dvc520osrfs3e" path="res://Scenes/Painting_storage.tscn" id="1_1qarx"]
+[ext_resource type="Script" uid="uid://b6qt1584i7iqu" path="res://Scripts/Level_change.gd" id="2_1qsor"]
+[ext_resource type="Texture2D" uid="uid://ssrsrrkxc3x8" path="res://Assets/Sprites/doge.png" id="3_skd8e"]
+[ext_resource type="Texture2D" uid="uid://d14n4slohu5e3" path="res://Assets/Sprites/Harambe.png" id="4_5lh14"]
+[ext_resource type="Texture2D" uid="uid://dgtpukeq0lf4i" path="res://Assets/Sprites/Noice.png" id="5_ycqxf"]
+[ext_resource type="Texture2D" uid="uid://os1xnkyiqud0" path="res://Assets/Sprites/SpanishLaughingGuy.png" id="6_1c4wf"]
+[ext_resource type="Texture2D" uid="uid://cn7iuxu4lg07h" path="res://Assets/Sprites/HuhGirl.png" id="7_ktf4l"]
+[ext_resource type="Texture2D" uid="uid://dikvvp3k3ru6a" path="res://Assets/Sprites/SusLook.png" id="8_533nd"]
+[ext_resource type="Texture2D" uid="uid://bi18avpbbc01j" path="res://Assets/Sprites/But-Thats-None-Of-My-Business.preview_small.png" id="9_1c4wf"]
+[ext_resource type="Texture2D" uid="uid://bksofjd32075b" path="res://Assets/Sprites/GirlBlamingCat.png" id="10_ktf4l"]
+[ext_resource type="Texture2D" uid="uid://b6mlf1somgj2t" path="res://Assets/Sprites/DisasterGirl.png" id="11_533nd"]
+[ext_resource type="Texture2D" uid="uid://ceynr826yg7gi" path="res://Assets/Sprites/Jojo.png" id="12_533nd"]
+[ext_resource type="Texture2D" uid="uid://b0etdjex4pqa3" path="res://Assets/Sprites/grumpyCat.png" id="13_r211h"]
+[ext_resource type="Texture2D" uid="uid://1x4o7ioxqbch" path="res://Assets/Sprites/Look.png" id="14_r211h"]
+[ext_resource type="Texture2D" uid="uid://d312c8xh44ndf" path="res://Assets/Sprites/MinionSus.png" id="15_qruop"]
+[ext_resource type="Texture2D" uid="uid://d3ul3af2531xt" path="res://Assets/Sprites/NOOOOOO.png" id="16_1qsor"]
+[ext_resource type="Texture2D" uid="uid://dxmcbusriq3ok" path="res://Assets/Sprites/Pepe.png" id="17_lq0jh"]
+[ext_resource type="Texture2D" uid="uid://cu3gx2tle1pbd" path="res://Assets/Sprites/OOOOPikachu.png" id="18_iekam"]
+[ext_resource type="Texture2D" uid="uid://s3sc7jwrnwc1" path="res://Assets/Sprites/MrBean.png" id="19_htfae"]
+[ext_resource type="Texture2D" uid="uid://bckoqff5q3jnc" path="res://Assets/Sprites/Brains.png" id="20_777eu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8xhgt"]
+shader = ExtResource("1_0bbt2")
+shader_parameter/base_color = Color(0.03137255, 0.80784315, 1, 1)
+shader_parameter/vein_color = Color(1, 1, 1, 1)
+shader_parameter/scale = 20.0
+shader_parameter/detail = 10.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pf2fs"]
 size = Vector2(99.875, 1.046875)
@@ -14,6 +41,9 @@ size = Vector2(1.015625, 49.046875)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xhgt"]
 size = Vector2(45, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljgi1"]
+size = Vector2(10, 1.125)
+
 [node name="Art_Gallery" type="Node2D" unique_id=437013759]
 
 [node name="Walls" type="Node2D" parent="." unique_id=560753129]
@@ -22,6 +52,7 @@ scale = Vector2(8, 8)
 
 [node name="Floor" type="ColorRect" parent="Walls" unique_id=1618196117]
 z_index = -8
+material = SubResource("ShaderMaterial_8xhgt")
 offset_top = 1.0
 offset_right = 100.0
 offset_bottom = 49.0
@@ -66,7 +97,7 @@ scale = Vector2(1, 1.4725001)
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=1818597078]
-z_index = -4
+z_index = 8
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -78,7 +109,7 @@ grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
 [node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=647119225]
-z_index = -2
+z_index = 8
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -90,7 +121,7 @@ grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=869321043]
-z_index = -4
+z_index = 8
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -103,7 +134,7 @@ grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
 [node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=1451194602]
-z_index = -2
+z_index = 8
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -140,6 +171,86 @@ shape = SubResource("RectangleShape2D_8xhgt")
 position = Vector2(77.5, 48.5)
 shape = SubResource("RectangleShape2D_8xhgt")
 
-[node name="Painting Stand" parent="." unique_id=499393629 instance=ExtResource("1_1qarx")]
-position = Vector2(-322, 6.999999)
-scale = Vector2(0.2, 0.2)
+[node name="Area2D" type="Area2D" parent="Walls" unique_id=1321255676]
+position = Vector2(50, 48.125)
+script = ExtResource("2_1qsor")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=1540996356]
+position = Vector2(0, 0.3)
+shape = SubResource("RectangleShape2D_ljgi1")
+
+[node name="Painting Stands" type="Node2D" parent="." unique_id=1427523381]
+position = Vector2(-333, 265)
+scale = Vector2(0.15, 0.15)
+
+[node name="Doge" parent="Painting Stands" unique_id=499393629 instance=ExtResource("1_1qarx")]
+position = Vector2(0, -1720)
+Painting = ExtResource("3_skd8e")
+
+[node name="Harambe" parent="Painting Stands" unique_id=1234204 instance=ExtResource("1_1qarx")]
+position = Vector2(913.33325, -1720)
+Painting = ExtResource("4_5lh14")
+
+[node name="Noice" parent="Painting Stands" unique_id=937797998 instance=ExtResource("1_1qarx")]
+position = Vector2(1793.3333, -1720)
+Painting = ExtResource("5_ycqxf")
+
+[node name="SpanishGuy" parent="Painting Stands" unique_id=1750224236 instance=ExtResource("1_1qarx")]
+position = Vector2(2626.6667, -1720)
+Painting = ExtResource("6_1c4wf")
+
+[node name="HuhGirl" parent="Painting Stands" unique_id=1732200583 instance=ExtResource("1_1qarx")]
+position = Vector2(3540, -1720)
+Painting = ExtResource("7_ktf4l")
+
+[node name="SusLook" parent="Painting Stands" unique_id=87904814 instance=ExtResource("1_1qarx")]
+position = Vector2(4420, -1720)
+Painting = ExtResource("8_533nd")
+
+[node name="Kermit" parent="Painting Stands" unique_id=950208582 instance=ExtResource("1_1qarx")]
+position = Vector2(0, -926.6667)
+Painting = ExtResource("9_1c4wf")
+
+[node name="GirlsAndCat" parent="Painting Stands" unique_id=1874907657 instance=ExtResource("1_1qarx")]
+position = Vector2(913.33325, -926.6667)
+Painting = ExtResource("10_ktf4l")
+
+[node name="Disaster Girl" parent="Painting Stands" unique_id=1492365659 instance=ExtResource("1_1qarx")]
+position = Vector2(1793.3333, -926.6667)
+Painting = ExtResource("11_533nd")
+
+[node name="Mike" parent="Painting Stands" unique_id=1939525912 instance=ExtResource("1_1qarx")]
+position = Vector2(2626.6667, -926.6667)
+Painting = ExtResource("12_533nd")
+
+[node name="GrumpyCat" parent="Painting Stands" unique_id=347864950 instance=ExtResource("1_1qarx")]
+position = Vector2(3540, -926.6667)
+Painting = ExtResource("13_r211h")
+
+[node name="Look" parent="Painting Stands" unique_id=1967540802 instance=ExtResource("1_1qarx")]
+position = Vector2(4420, -926.6667)
+Painting = ExtResource("14_r211h")
+
+[node name="Minion" parent="Painting Stands" unique_id=1755555100 instance=ExtResource("1_1qarx")]
+position = Vector2(0, -39.99994)
+Painting = ExtResource("15_qruop")
+
+[node name="Noooo" parent="Painting Stands" unique_id=819534781 instance=ExtResource("1_1qarx")]
+position = Vector2(913.33325, -39.99994)
+Painting = ExtResource("16_1qsor")
+
+[node name="Pepe" parent="Painting Stands" unique_id=433707421 instance=ExtResource("1_1qarx")]
+position = Vector2(1793.3333, -39.99994)
+Painting = ExtResource("17_lq0jh")
+
+[node name="Pikachu" parent="Painting Stands" unique_id=670688536 instance=ExtResource("1_1qarx")]
+position = Vector2(2626.6667, -39.99994)
+Painting = ExtResource("18_iekam")
+
+[node name="Mr Bean" parent="Painting Stands" unique_id=1592693362 instance=ExtResource("1_1qarx")]
+position = Vector2(3540, -39.99994)
+Painting = ExtResource("19_htfae")
+
+[node name="Brains" parent="Painting Stands" unique_id=617107965 instance=ExtResource("1_1qarx")]
+position = Vector2(4420, -39.99994)
+Painting = ExtResource("20_777eu")
