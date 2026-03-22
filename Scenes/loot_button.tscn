@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://oc0in4q4e88s"]
+
+[ext_resource type="FontFile" uid="uid://dqy8aguwj5o31" path="res://Assets/Fonts/Pixel Digivolve.otf" id="1_oq4s3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq4s3"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fshpw"]
+bg_color = Color(0.5882353, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y52cr"]
+bg_color = Color(0.7652138, 0.7652139, 0.7652137, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2617191, 0.26171917, 0.26171908, 1)
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+
+[node name="LootButton" type="Node2D" unique_id=1890356206]
+
+[node name="Button" type="Button" parent="." unique_id=170387498]
+offset_left = -25.0
+offset_top = -10.0
+offset_right = 25.0
+offset_bottom = 10.0
+theme_override_fonts/font = ExtResource("1_oq4s3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oq4s3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fshpw")
+action_mode = 0
+text = "Loot!
+"
+
+[node name="Panel" type="Panel" parent="." unique_id=672440014]
+z_index = -3
+offset_left = -29.0
+offset_top = -14.0
+offset_right = 29.0
+offset_bottom = 14.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y52cr")

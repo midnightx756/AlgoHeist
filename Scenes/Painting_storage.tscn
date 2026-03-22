@@ -14,7 +14,7 @@ size = Vector2(510, 255)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_366ul"]
 bg_color = Color(0.92941177, 0.7882353, 0.40392157, 1)
 
-[node name="Painting Stand" type="Node2D" unique_id=499393629]
+[node name="Painting Stand" type="Node2D" unique_id=499393629 groups=["Painting_Stand"]]
 script = ExtResource("1_vkfkr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=910913930]

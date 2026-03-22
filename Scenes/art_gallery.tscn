@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://duooku50yu2m3" path="res://Scripts/Marble_Floor.gdshader" id="1_0bbt2"]
 [ext_resource type="PackedScene" uid="uid://dvc520osrfs3e" path="res://Scenes/Painting_storage.tscn" id="1_1qarx"]
+[ext_resource type="Script" uid="uid://dvd6w32ixf7rd" path="res://Scripts/art_gallery.gd" id="1_lq0jh"]
 [ext_resource type="Script" uid="uid://b6qt1584i7iqu" path="res://Scripts/Level_change.gd" id="2_1qsor"]
 [ext_resource type="Texture2D" uid="uid://ssrsrrkxc3x8" path="res://Assets/Sprites/doge.png" id="3_skd8e"]
 [ext_resource type="Texture2D" uid="uid://d14n4slohu5e3" path="res://Assets/Sprites/Harambe.png" id="4_5lh14"]
@@ -45,6 +46,7 @@ size = Vector2(45, 1)
 size = Vector2(10, 1.125)
 
 [node name="Art_Gallery" type="Node2D" unique_id=437013759]
+script = ExtResource("1_lq0jh")
 
 [node name="Walls" type="Node2D" parent="." unique_id=560753129]
 position = Vector2(-399, -20)
@@ -254,3 +256,8 @@ Painting = ExtResource("19_htfae")
 [node name="Brains" parent="Painting Stands" unique_id=617107965 instance=ExtResource("1_1qarx")]
 position = Vector2(4420, -39.99994)
 Painting = ExtResource("20_777eu")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=796839163]
+position = Vector2(0, 108)
+scale = Vector2(0.7029779, -29.28213)
+zoom = Vector2(1.4, 1.15)

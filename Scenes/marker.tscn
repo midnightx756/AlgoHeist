@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b4camywvy382m"]
+
+[ext_resource type="Script" uid="uid://caolu67k4cnhx" path="res://Scripts/Marker.gd" id="1_sqlq3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08wab"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Marker" type="Node2D" unique_id=943987969 groups=["Markers"]]
+script = ExtResource("1_sqlq3")
+
+[node name="Panel" type="Panel" parent="." unique_id=951426763]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+tooltip_text = "This is a marker, usable for marking stuff
+"
+theme_override_styles/panel = SubResource("StyleBoxFlat_08wab")
+metadata/_edit_use_anchors_ = true
