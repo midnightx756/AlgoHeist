@@ -40,3 +40,6 @@ func returnItem() -> void:
 	
 func returnTransform():
 	return transform
+	
+func returnPosition():
+	return global_position

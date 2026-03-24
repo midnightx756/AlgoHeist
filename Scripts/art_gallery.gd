@@ -1,27 +1,30 @@
 extends Node2D
 
 @export var capacity: int = 10;
-@onready var painting_stands: Node2D = $"Painting Stands";
+@onready var painting_stands= $"Painting Stands";
 
 var maxSum = 0
 var marker := preload("res://Scenes/marker.tscn")
 
+@onready var button := get_node("LootButton/Button")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
 
 func _on_loot_button_pressed():
-	var Array_Shelves : Array[Node]= painting_stands.getChildren()
-	var knapsackArray = [];
+	var Array_Shelves : Array[Node]= painting_stands.get_children()
+	var knapsackArray: Array[Dictionary] = [];
 	var s:=0
 	for shelf in Array_Shelves:
 		var stats = shelf.get_stats()
 		if(stats != null):
-			stats.update({"Transform" : shelf.returnTransform()})
+			stats["Transform"] = shelf.returnPosition()
+			print(stats["Weight"], " ", stats["Profit"], stats["Transform"])
 			knapsackArray.append(stats)
 			s += 1
 	
-	if(knapsackArray.empty()):
+	if(knapsackArray.is_empty()):
 		print("Room is empty")
 		return
 		
@@ -32,45 +35,49 @@ func _on_loot_button_pressed():
 
 # To perform 0/1 Knapsack on the items in the scene 
 func Knapsack_01(arr, size):
-	var Arr2d: Array[Array]= [[]]
-	for x in size+1:
+	# Initialize DP Table (size + 1 rows, capacity + 1 columns)
+	var Arr2d = []
+	for x in range(size + 1):
 		var row = []
-		for y in capacity + 1:
+		for y in range(capacity + 1):
 			row.append(0)
 		Arr2d.append(row)
-		
-	for i in range(0, size+ 1):
+	
+	# Fill DP Table
+	# We use 1 to size to represent items. arr[i-1] accesses the item.
+	for i in range(1, size + 1):
 		for w in range(0, capacity + 1):
-			if i == 0 or w == 0:
-				Arr2d[i][w] = 0
-			elif arr[i]["Weight"] <= w:
-				Arr2d[i][w] = max(arr[i]["Profit"] + Arr2d[i-1][w - arr[i]["weight"]], Arr2d[i-1][w])
+			var weight = arr[i-1]["Weight"]
+			var profit = arr[i-1]["Profit"]
+			
+			if weight <= w:
+				# Compare taking vs not taking
+				Arr2d[i][w] = max(profit + Arr2d[i-1][w - int(weight)], Arr2d[i-1][w])
 			else:
 				Arr2d[i][w] = Arr2d[i-1][w]
 	
-	var maxSum = Arr2d[size][capacity]
-	var i = 0
-	var j = 0
-	var loot: Array[int]
+	# Backtracking
+	var loot = []
+	var i = size
+	var j = capacity
+	
 	while i > 0 and j > 0:
-		if Arr2d[i][j] == Arr2d[i -1 ][j]:
-			i = i-1
-		else:
-			loot.append(i)
-			i = i-1
-			j = j - arr[i]["weight"]
+		# If the value changed from the row above, we picked this item
+		if Arr2d[i][j] != Arr2d[i-1][j]:
+			loot.append(i - 1) # Add index of the item
+			j -= int(arr[i-1]["Weight"])
+		i -= 1
+	
 	return loot
 			
 func Highlight(baseArr, lootArr):
-	for i in get_tree().get_nodes_in_group("Markers"):
-		i.free()
+	#for i in get_tree().get_nodes_in_group("Markers"):
+		#i.free()
 		
+	print("Looted Items: ")
 	for i in lootArr:
 		var new_marker = marker.instantiate()
-		new_marker.global_transform = baseArr[i]["Transform"]
+		print(baseArr[i]["Weight"], " ", baseArr[i]["Profit"])
+		new_marker.position = baseArr[i]["Transform"]
 		add_child(new_marker)
-	
-	for i in get_tree().get_nodes_in_group("Markers"):
-		i.free()
-		
 			

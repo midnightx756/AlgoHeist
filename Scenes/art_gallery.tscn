@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cu3gx2tle1pbd" path="res://Assets/Sprites/OOOOPikachu.png" id="18_iekam"]
 [ext_resource type="Texture2D" uid="uid://s3sc7jwrnwc1" path="res://Assets/Sprites/MrBean.png" id="19_htfae"]
 [ext_resource type="Texture2D" uid="uid://bckoqff5q3jnc" path="res://Assets/Sprites/Brains.png" id="20_777eu"]
+[ext_resource type="PackedScene" uid="uid://oc0in4q4e88s" path="res://Scenes/loot_button.tscn" id="23_iekam"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8xhgt"]
 shader = ExtResource("1_0bbt2")
@@ -257,7 +258,10 @@ Painting = ExtResource("19_htfae")
 position = Vector2(4420, -39.99994)
 Painting = ExtResource("20_777eu")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=796839163]
-position = Vector2(0, 108)
-scale = Vector2(0.7029779, -29.28213)
-zoom = Vector2(1.4, 1.15)
+[node name="LootButton" parent="." unique_id=1890356206 instance=ExtResource("23_iekam")]
+z_index = 8
+position = Vector2(311, 341)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1086691132]
+position = Vector2(0, 109)
+zoom = Vector2(1.5, 1.2)

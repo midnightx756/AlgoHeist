@@ -6,6 +6,8 @@
 bg_color = Color(1, 1, 1, 1)
 
 [node name="Marker" type="Node2D" unique_id=943987969 groups=["Markers"]]
+z_index = 100
+y_sort_enabled = true
 script = ExtResource("1_sqlq3")
 
 [node name="Panel" type="Panel" parent="." unique_id=951426763]
