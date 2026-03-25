@@ -1,8 +1,21 @@
 [gd_scene format=3 uid="uid://cyf2ktfuo1ne7"]
 
+[ext_resource type="Script" uid="uid://dccs05m6k1xb7" path="res://Scripts/server_room.gd" id="1_2xcjn"]
 [ext_resource type="PackedScene" uid="uid://b437tk4kqtgdb" path="res://Scenes/Rack.tscn" id="1_32ypq"]
 [ext_resource type="Script" uid="uid://b6qt1584i7iqu" path="res://Scripts/Level_change.gd" id="1_m4m53"]
 [ext_resource type="PackedScene" uid="uid://bgqehyqy64vxi" path="res://Scenes/Computer.tscn" id="2_y5crd"]
+[ext_resource type="Texture2D" uid="uid://bkkaes45u268b" path="res://Assets/Sprites/AIPrototype.jpg" id="4_ktpbq"]
+[ext_resource type="Texture2D" uid="uid://bc76skbomytuq" path="res://Assets/Sprites/BiometricAuthKey.jpg" id="5_1cr5x"]
+[ext_resource type="Texture2D" uid="uid://bmik21tv3kl0y" path="res://Assets/Sprites/BlackmailSSD.jpg" id="6_1cr5x"]
+[ext_resource type="Texture2D" uid="uid://cu1gxb76bssis" path="res://Assets/Sprites/CoolingFanUnit.jpg" id="7_exc5d"]
+[ext_resource type="Texture2D" uid="uid://bgroep3hvnrt8" path="res://Assets/Sprites/CryptoWallet.jpg" id="8_8nki4"]
+[ext_resource type="Texture2D" uid="uid://8ux0aqpli6dl" path="res://Assets/Sprites/CRTMonitor.jpg" id="9_ywng4"]
+[ext_resource type="Texture2D" uid="uid://dhc18ux5tnn2r" path="res://Assets/Sprites/GoldServerBlade.png" id="10_543ec"]
+[ext_resource type="Texture2D" uid="uid://ca72n44svimom" path="res://Assets/Sprites/GPU.jpg" id="11_v6f4u"]
+[ext_resource type="Texture2D" uid="uid://cxxj1gickcn07" path="res://Assets/Sprites/ServerBlade.jpg" id="12_k6ppl"]
+[ext_resource type="Texture2D" uid="uid://4xxu2b38d4li" path="res://Assets/Sprites/LithiumIonBattery.jpg" id="12_qh7xg"]
+[ext_resource type="Texture2D" uid="uid://breqyx8wi8nhl" path="res://Assets/Sprites/TangledCables.jpg" id="13_lbe2h"]
+[ext_resource type="PackedScene" uid="uid://oc0in4q4e88s" path="res://Scenes/loot_button.tscn" id="16_lt3kd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5crd"]
 size = Vector2(99.875, 1.046875)
@@ -21,6 +34,8 @@ size = Vector2(10, 1.125)
 
 [node name="ServerRoom" type="Node2D" unique_id=2018137933]
 scale = Vector2(64, 64)
+script = ExtResource("1_2xcjn")
+capacity = 100
 
 [node name="Walls" type="Node2D" parent="." unique_id=1376334247]
 position = Vector2(-50, -20)
@@ -156,49 +171,56 @@ shape = SubResource("RectangleShape2D_ktpbq")
 [node name="Servers" type="Node2D" parent="." unique_id=413158820]
 position = Vector2(-50, -20)
 
-[node name="Server" parent="Servers" unique_id=1348484573 instance=ExtResource("1_32ypq")]
+[node name="AiProtype" parent="Servers" unique_id=1348484573 instance=ExtResource("1_32ypq")]
 position = Vector2(8.046875, 3.703125)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("4_ktpbq")
 
 [node name="Server2" parent="Servers" unique_id=807506263 instance=ExtResource("1_32ypq")]
 position = Vector2(21.59375, 3.703126)
 scale = Vector2(0.2, 0.2)
 
-[node name="Server3" parent="Servers" unique_id=895337868 instance=ExtResource("1_32ypq")]
+[node name="Auth Key" parent="Servers" unique_id=895337868 instance=ExtResource("1_32ypq")]
 position = Vector2(35.140625, 3.703126)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("5_1cr5x")
 
-[node name="Server4" parent="Servers" unique_id=1360176955 instance=ExtResource("1_32ypq")]
+[node name="BlackMail SSD" parent="Servers" unique_id=1360176955 instance=ExtResource("1_32ypq")]
 position = Vector2(92.0625, 3.703125)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("6_1cr5x")
 
-[node name="Server5" parent="Servers" unique_id=1892882692 instance=ExtResource("1_32ypq")]
+[node name="Cooling Fan" parent="Servers" unique_id=1892882692 instance=ExtResource("1_32ypq")]
 position = Vector2(64.875, 3.703125)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("7_exc5d")
 
 [node name="Server6" parent="Servers" unique_id=692214061 instance=ExtResource("1_32ypq")]
 position = Vector2(78.56251, 3.7031248)
 scale = Vector2(0.2, 0.2)
 
-[node name="Server7" parent="Servers" unique_id=569657743 instance=ExtResource("1_32ypq")]
+[node name="Crypto Wallet" parent="Servers" unique_id=569657743 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(21.46875, 19.25)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("8_8nki4")
 
-[node name="Server8" parent="Servers" unique_id=1775102161 instance=ExtResource("1_32ypq")]
+[node name="Old CRT Monitor" parent="Servers" unique_id=1775102161 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(35.015625, 19.25)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("9_ywng4")
 
 [node name="Server9" parent="Servers" unique_id=1066024003 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(48.54687, 19.25)
 scale = Vector2(0.2, 0.2)
 
-[node name="Server10" parent="Servers" unique_id=71639478 instance=ExtResource("1_32ypq")]
+[node name="Gold Server Blade" parent="Servers" unique_id=71639478 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(91.95312, 19.25)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("10_543ec")
 
 [node name="Server11" parent="Servers" unique_id=1959642569 instance=ExtResource("1_32ypq")]
 z_index = 1
@@ -210,32 +232,36 @@ z_index = 1
 position = Vector2(78.40624, 19.25)
 scale = Vector2(0.2, 0.2)
 
-[node name="Server13" parent="Servers" unique_id=1268122020 instance=ExtResource("1_32ypq")]
+[node name="GPU" parent="Servers" unique_id=1268122020 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(91.796875, 33.875)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("11_v6f4u")
 
 [node name="Server14" parent="Servers" unique_id=1630052776 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(64.70312, 33.859375)
 scale = Vector2(0.2, 0.2)
 
-[node name="Server15" parent="Servers" unique_id=1417695154 instance=ExtResource("1_32ypq")]
+[node name="Server Blade" parent="Servers" unique_id=1417695154 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(35.00001, 33.875)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("12_k6ppl")
 
-[node name="Server16" parent="Servers" unique_id=1257250940 instance=ExtResource("1_32ypq")]
+[node name="Cables" parent="Servers" unique_id=1257250940 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(21.453127, 33.875)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("13_lbe2h")
 
-[node name="Server17" parent="Servers" unique_id=1519620289 instance=ExtResource("1_32ypq")]
+[node name="Lithium Battery" parent="Servers" unique_id=1519620289 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(7.921875, 33.875)
 scale = Vector2(0.2, 0.2)
+lootItem = ExtResource("12_qh7xg")
 
-[node name="Server18" parent="Servers" unique_id=926229628 instance=ExtResource("1_32ypq")]
+[node name="Server" parent="Servers" unique_id=926229628 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(78.40624, 33.875)
 scale = Vector2(0.2, 0.2)
@@ -243,3 +269,11 @@ scale = Vector2(0.2, 0.2)
 [node name="Computer" parent="." unique_id=925157900 instance=ExtResource("2_y5crd")]
 position = Vector2(-0.09375, -11.312498)
 scale = Vector2(0.12, 0.078)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=321525558]
+position = Vector2(0, -4.90625)
+zoom = Vector2(0.08, 0.08)
+
+[node name="LootButton" parent="." unique_id=1890356206 instance=ExtResource("16_lt3kd")]
+position = Vector2(39.75, 24.578127)
+scale = Vector2(0.3, 0.3)

@@ -11,6 +11,7 @@ y_sort_enabled = true
 script = ExtResource("1_sqlq3")
 
 [node name="Panel" type="Panel" parent="." unique_id=951426763]
+z_index = 100
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0

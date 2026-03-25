@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b437tk4kqtgdb"]
 
+[ext_resource type="Script" uid="uid://ceqaj3cwsc6sd" path="res://Scripts/rack.gd" id="1_3mool"]
 [ext_resource type="Script" uid="uid://bbs3isr6ku5l3" path="res://Scripts/server_rack.gd" id="1_6wum4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ybm7"]
 size = Vector2(20, 29.999996)
 
 [node name="Server" type="Node2D" unique_id=1348484573]
+script = ExtResource("1_3mool")
 
 [node name="ServerRack" type="StaticBody2D" parent="." unique_id=173781170]
 y_sort_enabled = true
