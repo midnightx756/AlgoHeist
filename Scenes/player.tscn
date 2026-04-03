@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://ba1qqbg8y4ekp"]
+
+[node name="Player" type="Node2D" unique_id=496531915]
+visibility_layer = 4

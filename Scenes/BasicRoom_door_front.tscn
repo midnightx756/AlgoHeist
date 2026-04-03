@@ -144,6 +144,8 @@ shape = SubResource("RectangleShape2D_y7wnj")
 
 [node name="Area2D" type="Area2D" parent="Walls" unique_id=927698282]
 position = Vector2(50, 48.125)
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_bljg6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=1202566069]

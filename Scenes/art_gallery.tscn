@@ -150,6 +150,7 @@ grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Collider" type="StaticBody2D" parent="Walls" unique_id=353317817]
+collision_mask = 4
 
 [node name="Back" type="CollisionShape2D" parent="Walls/Collider" unique_id=325710210]
 position = Vector2(50.078125, 0.546875)
@@ -176,6 +177,8 @@ shape = SubResource("RectangleShape2D_8xhgt")
 
 [node name="Area2D" type="Area2D" parent="Walls" unique_id=1321255676]
 position = Vector2(50, 48.125)
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("2_1qsor")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=1540996356]

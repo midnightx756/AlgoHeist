@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://kn65hgmti6ik"]
+
+[ext_resource type="Script" uid="uid://xkuuodoeebvu" path="res://Scripts/sculpture_keeper.gd" id="1_mf115"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf115"]
+bg_color = Color(0.8446136, 0.8446136, 0.84461343, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qou7g"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnxpc"]
+bg_color = Color(0.84313726, 0.84313726, 0.84313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf6xq"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mf115"]
+size = Vector2(96, 96)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_puhok"]
+bg_color = Color(0.92941177, 0.7882353, 0.40392157, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_color = Color(0.57254905, 0.43529412, 0.20392157, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf115"]
+
+[node name="Scultpture_display" type="Node2D" unique_id=1019239305]
+script = ExtResource("1_mf115")
+
+[node name="Panel" type="Panel" parent="." unique_id=1085746353]
+offset_left = -32.0
+offset_top = -160.0
+offset_right = 32.0
+offset_bottom = -96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mf115")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1342473554]
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 32.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qou7g")
+
+[node name="Panel3" type="Panel" parent="." unique_id=1639497054]
+z_index = -2
+offset_left = -48.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 112.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wnxpc")
+
+[node name="Panel4" type="Panel" parent="." unique_id=2008652676]
+offset_left = -48.0
+offset_top = 112.0
+offset_right = 48.0
+offset_bottom = 128.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lf6xq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1626181287]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1847761517]
+position = Vector2(0, 80)
+shape = SubResource("RectangleShape2D_mf115")
+
+[node name="Artifact Display" type="RichTextLabel" parent="." unique_id=722112824]
+z_index = 5
+offset_left = -30.0
+offset_top = -90.0
+offset_right = 30.0
+offset_bottom = -50.0
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
+theme_override_font_sizes/italics_font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_puhok")
+text = "Name: Julius Ceaser"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Artifact Holder" type="Panel" parent="." unique_id=999479205]
+offset_left = -25.0
+offset_top = -158.0
+offset_right = 25.0
+offset_bottom = -108.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mf115")
+
+[node name="Artifact Keeper" type="Sprite2D" parent="Artifact Holder" unique_id=946104125]

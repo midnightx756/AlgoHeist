@@ -1,6 +1,27 @@
 [gd_scene format=3 uid="uid://piotcij3n0l1"]
 
+[ext_resource type="Script" uid="uid://c12m5aebh5ees" path="res://Scripts/scultpture_room.gd" id="1_338xv"]
 [ext_resource type="Script" uid="uid://b6qt1584i7iqu" path="res://Scripts/Level_change.gd" id="1_l8j0i"]
+[ext_resource type="PackedScene" uid="uid://kn65hgmti6ik" path="res://Scenes/scultpture_display.tscn" id="3_1k3o2"]
+[ext_resource type="PackedScene" uid="uid://oc0in4q4e88s" path="res://Scenes/loot_button.tscn" id="5_0qq72"]
+[ext_resource type="Texture2D" uid="uid://dxn6wq7lelbhh" path="res://Assets/Sprites/IvoryFaceOfApollo.jpg" id="5_hwtxx"]
+[ext_resource type="Texture2D" uid="uid://57ihtms0c86w" path="res://Assets/Sprites/Germain-Royal-Soup-Tureen.jpg" id="6_kr5wd"]
+[ext_resource type="Texture2D" uid="uid://ck520vv5d4fvo" path="res://Assets/Sprites/GuennolLioness.jpg" id="7_3cw78"]
+[ext_resource type="Texture2D" uid="uid://cu7mvs3ie6ggw" path="res://Assets/Sprites/Leonardo-da-Vincis-codex-Leicester.jpg" id="8_v63et"]
+[ext_resource type="Texture2D" uid="uid://jnwku10pnime" path="res://Assets/Sprites/Ming-Dynasty-Gold-Tripod-Vessel.jpg" id="9_qs4c8"]
+[ext_resource type="Texture2D" uid="uid://da5yy2wumikca" path="res://Assets/Sprites/Olyphant-Battle-Horn.jpg" id="10_qeywd"]
+[ext_resource type="Texture2D" uid="uid://wi0f2q70xo5b" path="res://Assets/Sprites/CamFordAssayrianRelief.jpg" id="11_a46de"]
+[ext_resource type="Texture2D" uid="uid://0ousl8lsroys" path="res://Assets/Sprites/Buddha.jpg" id="12_r2fwe"]
+[ext_resource type="Texture2D" uid="uid://iibuon0kl2uu" path="res://Assets/Sprites/NorthHamptonSekhema.jpg" id="13_r2fwe"]
+[ext_resource type="Texture2D" uid="uid://chbktjwb3im53" path="res://Assets/Sprites/Princess-Katherine-Henckel.jpg" id="14_p5dgh"]
+[ext_resource type="Texture2D" uid="uid://bewypc7g6v20m" path="res://Assets/Sprites/Pinner-Qing-Dynasty-Vase.jpg" id="15_33smx"]
+[ext_resource type="Texture2D" uid="uid://dheqvmpbjoxb8" path="res://Assets/Sprites/Ritual wine vessel_ The Ming Fanglei.jpg" id="16_sydrl"]
+[ext_resource type="Texture2D" uid="uid://cjrlxwv12yetr" path="res://Assets/Sprites/VictoriusYouth.jpg" id="17_p5dgh"]
+[ext_resource type="Texture2D" uid="uid://dbo1pdc3rklfr" path="res://Assets/Sprites/ReliefOfAWingedGenius.jpg" id="18_sydrl"]
+[ext_resource type="Texture2D" uid="uid://dcvcp4hhfa62m" path="res://Assets/Sprites/TheHamiltonAphrodite.jpg" id="19_t1i47"]
+[ext_resource type="Texture2D" uid="uid://dy0jem0ydd6iy" path="res://Assets/Sprites/ParisianClock.jpg" id="20_t1i47"]
+[ext_resource type="Texture2D" uid="uid://cui4btdc1sldo" path="res://Assets/Sprites/ArtemisAndStag.jpg" id="21_76jmc"]
+[ext_resource type="Texture2D" uid="uid://ctgamk8f2khxb" path="res://Assets/Sprites/Napoleon's_pistol.jpg" id="22_qs4c8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_338xv"]
 size = Vector2(99.875, 1.046875)
@@ -18,15 +39,19 @@ size = Vector2(45, 1)
 size = Vector2(10, 1.125)
 
 [node name="Node2D" type="Node2D" unique_id=236250369]
+script = ExtResource("1_338xv")
+capacity = 100
 
 [node name="Walls" type="Node2D" parent="." unique_id=1958675005]
-position = Vector2(-50, -20)
+position = Vector2(-1001.5, -400)
+scale = Vector2(20, 20)
 
 [node name="Floor" type="ColorRect" parent="Walls" unique_id=1801662344]
 z_index = -8
 offset_top = 1.0
 offset_right = 100.0
 offset_bottom = 49.0
+color = Color(0.14646932, 0.14646932, 0.14646932, 1)
 
 [node name="Top Wall" type="ColorRect" parent="Walls" unique_id=435394401]
 z_index = -6
@@ -68,7 +93,7 @@ scale = Vector2(1, 1.4725001)
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=2045977426]
-z_index = -4
+z_index = 2
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -80,7 +105,7 @@ grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
 [node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=41251187]
-z_index = -2
+z_index = 3
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -92,7 +117,7 @@ grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=674823926]
-z_index = -4
+z_index = 2
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -105,7 +130,7 @@ grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
 [node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=338787457]
-z_index = -2
+z_index = 3
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -118,6 +143,7 @@ grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Collider" type="StaticBody2D" parent="Walls" unique_id=1723827001]
+collision_mask = 4
 
 [node name="Back" type="CollisionShape2D" parent="Walls/Collider" unique_id=523492260]
 position = Vector2(50.078125, 0.546875)
@@ -135,19 +161,157 @@ shape = SubResource("RectangleShape2D_yths2")
 debug_color = Color(0.7674996, 0.44600385, 0.0839582, 0.41960785)
 
 [node name="Front" type="CollisionShape2D" parent="Walls/Collider" unique_id=1955327138]
-position = Vector2(22.5, 48.5)
+position = Vector2(22.499998, 48.499996)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_0qq72")
 
 [node name="Front2" type="CollisionShape2D" parent="Walls/Collider" unique_id=2072540797]
-position = Vector2(77.5, 48.5)
+position = Vector2(77.5, 48.499996)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_0qq72")
 
 [node name="Area2D" type="Area2D" parent="Walls" unique_id=2090900231]
 position = Vector2(50, 48.125)
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_l8j0i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=1088824512]
 position = Vector2(0, 0.3)
 shape = SubResource("RectangleShape2D_hwtxx")
+
+[node name="Statues" type="Node2D" parent="." unique_id=510912715]
+
+[node name="Apollo" parent="Statues" unique_id=1019239305 instance=ExtResource("3_1k3o2")]
+position = Vector2(-894, -375)
+artifact = ExtResource("5_hwtxx")
+customScale = Vector2(0.25, 0.25)
+customPosition = Vector2(-894, -530)
+Aname = "Ivory Face Of Apollo"
+
+[node name="German thing" parent="Statues" unique_id=299384148 instance=ExtResource("3_1k3o2")]
+position = Vector2(-543, -375)
+artifact = ExtResource("6_kr5wd")
+customScale = Vector2(0.2, 0.2)
+customPosition = Vector2(-543, -520)
+Aname = "Germain Royal Soup Bowl"
+
+[node name="Guennol Lioness" parent="Statues" unique_id=2108630434 instance=ExtResource("3_1k3o2")]
+position = Vector2(-175, -375)
+artifact = ExtResource("7_3cw78")
+customScale = Vector2(0.2, 0.2)
+customPosition = Vector2(-175, -530)
+Aname = "Guennol Lioness"
+
+[node name="LeoNardDaVinci" parent="Statues" unique_id=1759057859 instance=ExtResource("3_1k3o2")]
+position = Vector2(165, -375)
+artifact = ExtResource("8_v63et")
+customScale = Vector2(0.2, 0.2)
+customPosition = Vector2(165, -530)
+Aname = "Leonardo Da Vinci Codex Liecester"
+
+[node name="MinG Dynasty" parent="Statues" unique_id=1691362874 instance=ExtResource("3_1k3o2")]
+position = Vector2(516, -375)
+artifact = ExtResource("9_qs4c8")
+customScale = Vector2(0.4, 0.4)
+customPosition = Vector2(516, -510)
+Aname = "Ming Dynasty Gold Tripod Vessel"
+
+[node name="Battle Horn" parent="Statues" unique_id=267005232 instance=ExtResource("3_1k3o2")]
+position = Vector2(884, -375)
+artifact = ExtResource("10_qeywd")
+customScale = Vector2(0.15, 0.15)
+customPosition = Vector2(884, -510)
+Aname = "Olyphant Battle Horn"
+
+[node name="CamFord Assyrian" parent="Statues" unique_id=160830066 instance=ExtResource("3_1k3o2")]
+position = Vector2(-894, -41)
+artifact = ExtResource("11_a46de")
+customScale = Vector2(0.3, 0.3)
+customPosition = Vector2(-894, -170)
+Aname = "CamFord Assyrian Relief"
+
+[node name="Buddha" parent="Statues" unique_id=1163809265 instance=ExtResource("3_1k3o2")]
+position = Vector2(-543, -41)
+artifact = ExtResource("12_r2fwe")
+customScale = Vector2(0.15, 0.15)
+customPosition = Vector2(-543, -210)
+
+[node name="North Hampton" parent="Statues" unique_id=830033964 instance=ExtResource("3_1k3o2")]
+position = Vector2(-175, -41)
+artifact = ExtResource("13_r2fwe")
+customScale = Vector2(0.4, 0.4)
+customPosition = Vector2(-175, -220)
+Aname = "North Hampton Sechema"
+
+[node name="Princess Katherine" parent="Statues" unique_id=673923896 instance=ExtResource("3_1k3o2")]
+position = Vector2(165, -41)
+artifact = ExtResource("14_p5dgh")
+customScale = Vector2(0.15, 0.15)
+customPosition = Vector2(165, -160)
+Aname = "Princess Kkatherine Henckel"
+
+[node name="Quing Dynasty" parent="Statues" unique_id=2122663331 instance=ExtResource("3_1k3o2")]
+position = Vector2(516, -41)
+artifact = ExtResource("15_33smx")
+customScale = Vector2(0.2, 0.2)
+customPosition = Vector2(516, -200)
+Aname = "Pinner Qing Dynasty Vase"
+
+[node name="Ritual Wine Vessel" parent="Statues" unique_id=285831600 instance=ExtResource("3_1k3o2")]
+position = Vector2(885, -41)
+artifact = ExtResource("16_sydrl")
+customScale = Vector2(0.3, 0.3)
+customPosition = Vector2(884, -200)
+Aname = "Ritual Vine Wessel"
+
+[node name="Victorius Youth" parent="Statues" unique_id=689297740 instance=ExtResource("3_1k3o2")]
+position = Vector2(-894, 297)
+artifact = ExtResource("17_p5dgh")
+customScale = Vector2(0.5, 0.5)
+customPosition = Vector2(-894, 95)
+Aname = "Victorius Youth"
+
+[node name="Relief Of Winged Genius" parent="Statues" unique_id=1974772015 instance=ExtResource("3_1k3o2")]
+position = Vector2(-543, 297)
+artifact = ExtResource("18_sydrl")
+customScale = Vector2(0.3, 0.3)
+customPosition = Vector2(-543, 130)
+Aname = "Relief Of a Winged Genius"
+
+[node name="Hamilton Aphrodite" parent="Statues" unique_id=1943705220 instance=ExtResource("3_1k3o2")]
+position = Vector2(-175, 297)
+artifact = ExtResource("19_t1i47")
+customScale = Vector2(0.5, 0.5)
+customPosition = Vector2(-175, 95)
+Aname = "Hamilton Artemis"
+
+[node name="parisian Clock" parent="Statues" unique_id=2070965507 instance=ExtResource("3_1k3o2")]
+position = Vector2(165, 297)
+artifact = ExtResource("20_t1i47")
+customScale = Vector2(0.1, 0.1)
+customPosition = Vector2(165, 140)
+
+[node name="Artemis" parent="Statues" unique_id=1503248083 instance=ExtResource("3_1k3o2")]
+position = Vector2(516, 297)
+artifact = ExtResource("21_76jmc")
+customScale = Vector2(0.5, 0.5)
+customPosition = Vector2(516, 95)
+Aname = "Atemis"
+
+[node name="Napoleon\'s Pistol" parent="Statues" unique_id=1296794258 instance=ExtResource("3_1k3o2")]
+position = Vector2(884, 297)
+artifact = ExtResource("22_qs4c8")
+customScale = Vector2(0.15, 0.15)
+customPosition = Vector2(884, 150)
+Aname = "Napoleon's Pistol"
+
+[node name="LootButton" parent="." unique_id=1890356206 instance=ExtResource("5_0qq72")]
+z_index = 5
+position = Vector2(771, 480.00003)
+scale = Vector2(5, 5)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=907601178]
+zoom = Vector2(0.4, 0.4)
 
 [connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]

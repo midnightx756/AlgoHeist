@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="WareHouse Heist"
-run/main_scene="uid://b437tk4kqtgdb"
+run/main_scene="uid://cjomfrji8jvg5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_render/layer_3="Player"
 
 [physics]
 
