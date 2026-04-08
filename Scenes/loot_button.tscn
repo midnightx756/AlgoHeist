@@ -18,6 +18,8 @@ corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq4s3"]
 bg_color = Color(1, 0, 0, 1)
+border_width_top = 2
+border_color = Color(0.67903036, 0, 0, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -34,6 +36,8 @@ corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t61pk"]
 bg_color = Color(1, 0.6576017, 0.6043624, 1)
+border_width_top = 2
+border_color = Color(0.9999934, 0.46983755, 0.398601, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
