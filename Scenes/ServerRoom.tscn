@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://4xxu2b38d4li" path="res://Assets/Sprites/LithiumIonBattery.jpg" id="12_qh7xg"]
 [ext_resource type="Texture2D" uid="uid://breqyx8wi8nhl" path="res://Assets/Sprites/TangledCables.jpg" id="13_lbe2h"]
 [ext_resource type="PackedScene" uid="uid://oc0in4q4e88s" path="res://Scenes/loot_button.tscn" id="16_lt3kd"]
+[ext_resource type="PackedScene" uid="uid://dq73kiyfk2npo" path="res://Scenes/Player.tscn" id="17_bnb56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5crd"]
 size = Vector2(99.875, 1.046875)
@@ -33,6 +34,7 @@ size = Vector2(45, 1)
 size = Vector2(10, 1.125)
 
 [node name="ServerRoom" type="Node2D" unique_id=2018137933]
+y_sort_enabled = true
 scale = Vector2(64, 64)
 script = ExtResource("1_2xcjn")
 capacity = 100
@@ -86,7 +88,7 @@ scale = Vector2(1, 1.4725001)
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=1412301299]
-z_index = -4
+z_index = 6
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -98,7 +100,7 @@ grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
 [node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=1011612351]
-z_index = -2
+z_index = 6
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -110,7 +112,7 @@ grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=1862869635]
-z_index = -4
+z_index = 6
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -123,7 +125,7 @@ grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
 [node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=587659019]
-z_index = -2
+z_index = 6
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -172,6 +174,7 @@ position = Vector2(0, 0.3)
 shape = SubResource("RectangleShape2D_ktpbq")
 
 [node name="Servers" type="Node2D" parent="." unique_id=413158820]
+y_sort_enabled = true
 position = Vector2(-50, -20)
 
 [node name="AiProtype" parent="Servers" unique_id=1348484573 instance=ExtResource("1_32ypq")]
@@ -273,10 +276,20 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(-0.09375, -11.312498)
 scale = Vector2(0.12, 0.078)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=321525558]
-position = Vector2(0, -4.90625)
-zoom = Vector2(0.08, 0.08)
-
 [node name="LootButton" parent="." unique_id=1890356206 instance=ExtResource("16_lt3kd")]
+z_index = 11
 position = Vector2(39.75, 24.578127)
 scale = Vector2(0.3, 0.3)
+
+[node name="Player" parent="." unique_id=517162128 instance=ExtResource("17_bnb56")]
+z_index = 11
+y_sort_enabled = true
+position = Vector2(-0.46875, 15.546875)
+scale = Vector2(0.2, 0.2)
+SPEED = 1000
+zoomDimesion = Vector2(1, 1)
+
+[node name="Camera2D" parent="Player" index="2" unique_id=760324827]
+zoom = Vector2(0.5, 0.5)
+
+[editable path="Player"]

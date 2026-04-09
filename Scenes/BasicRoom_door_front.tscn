@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6fr85vrltnwe"]
 
 [ext_resource type="Script" uid="uid://b6qt1584i7iqu" path="res://Scripts/Level_change.gd" id="1_bljg6"]
+[ext_resource type="PackedScene" uid="uid://dq73kiyfk2npo" path="res://Scenes/Player.tscn" id="2_ce7nt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bt2g3"]
 size = Vector2(99.875, 1.046875)
@@ -17,7 +18,7 @@ size = Vector2(45, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywg0w"]
 size = Vector2(10, 1.125)
 
-[node name="Art Gallery" type="Node2D" unique_id=1386878256]
+[node name="Room" type="Node2D" unique_id=1386878256]
 
 [node name="Walls" type="Node2D" parent="." unique_id=1395996928]
 position = Vector2(-50, -20)
@@ -68,7 +69,8 @@ scale = Vector2(1, 1.4725001)
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=1117533648]
-z_index = -4
+z_index = 9
+y_sort_enabled = true
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -80,7 +82,8 @@ grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
 [node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=568175024]
-z_index = -2
+z_index = 9
+y_sort_enabled = true
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -92,7 +95,8 @@ grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=82546682]
-z_index = -4
+z_index = 9
+y_sort_enabled = true
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -105,7 +109,8 @@ grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
 [node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=1658636026]
-z_index = -2
+z_index = 9
+y_sort_enabled = true
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -151,5 +156,8 @@ script = ExtResource("1_bljg6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=1202566069]
 position = Vector2(0, 0.3)
 shape = SubResource("RectangleShape2D_ywg0w")
+
+[node name="Player" parent="." unique_id=517162128 instance=ExtResource("2_ce7nt")]
+scale = Vector2(0.2, 0.2)
 
 [connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]

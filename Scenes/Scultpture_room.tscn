@@ -93,7 +93,7 @@ scale = Vector2(1, 1.4725001)
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=2045977426]
-z_index = 2
+z_index = 6
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -105,7 +105,7 @@ grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
 [node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=41251187]
-z_index = 3
+z_index = 6
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -117,7 +117,7 @@ grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
 
 [node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=674823926]
-z_index = 2
+z_index = 6
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -130,7 +130,7 @@ grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
 
 [node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=338787457]
-z_index = 3
+z_index = 6
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -245,10 +245,11 @@ customPosition = Vector2(-175, -220)
 Aname = "North Hampton Sechema"
 
 [node name="Princess Katherine" parent="Statues" unique_id=673923896 instance=ExtResource("3_1k3o2")]
+z_index = 6
 position = Vector2(165, -41)
 artifact = ExtResource("14_p5dgh")
 customScale = Vector2(0.15, 0.15)
-customPosition = Vector2(165, -160)
+customPosition = Vector2(165, -175)
 Aname = "Princess Kkatherine Henckel"
 
 [node name="Quing Dynasty" parent="Statues" unique_id=2122663331 instance=ExtResource("3_1k3o2")]
@@ -307,7 +308,7 @@ customPosition = Vector2(884, 150)
 Aname = "Napoleon's Pistol"
 
 [node name="LootButton" parent="." unique_id=1890356206 instance=ExtResource("5_0qq72")]
-z_index = 5
+z_index = 14
 position = Vector2(771, 480.00003)
 scale = Vector2(5, 5)
 
