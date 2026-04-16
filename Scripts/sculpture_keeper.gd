@@ -21,7 +21,7 @@ func _ready() -> void:
 		artifact_keeper.global_scale = customScale
 		weight = randi_range(1, 100)
 		profit = randf_range(0, 100000)
-		artifact_display.add_text("Name: {Aname}")
+		artifact_display.add_text("Name: " + Aname)
 
 func artifact_looted():
 	looted = true

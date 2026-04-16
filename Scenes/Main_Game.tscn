@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://cjomfrji8jvg5"]
 
 [node name="MainScene" type="Node2D" unique_id=879337936]
+
+[node name="AlgoManager" type="Node2D" parent="." unique_id=1804548491]
+
+[node name="UI" type="Node2D" parent="." unique_id=241471176]
+
+[node name="Level" type="Node2D" parent="." unique_id=1662731050]

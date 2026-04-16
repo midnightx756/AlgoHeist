@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dy0jem0ydd6iy" path="res://Assets/Sprites/ParisianClock.jpg" id="20_t1i47"]
 [ext_resource type="Texture2D" uid="uid://cui4btdc1sldo" path="res://Assets/Sprites/ArtemisAndStag.jpg" id="21_76jmc"]
 [ext_resource type="Texture2D" uid="uid://ctgamk8f2khxb" path="res://Assets/Sprites/Napoleon's_pistol.jpg" id="22_qs4c8"]
+[ext_resource type="PackedScene" uid="uid://dq73kiyfk2npo" path="res://Scenes/Player.tscn" id="23_qs4c8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_338xv"]
 size = Vector2(99.875, 1.046875)
@@ -39,37 +40,46 @@ size = Vector2(45, 1)
 size = Vector2(10, 1.125)
 
 [node name="Node2D" type="Node2D" unique_id=236250369]
+y_sort_enabled = true
 script = ExtResource("1_338xv")
 capacity = 100
 
 [node name="Walls" type="Node2D" parent="." unique_id=1958675005]
+y_sort_enabled = true
 position = Vector2(-1001.5, -400)
 scale = Vector2(20, 20)
 
 [node name="Floor" type="ColorRect" parent="Walls" unique_id=1801662344]
 z_index = -8
+y_sort_enabled = true
 offset_top = 1.0
 offset_right = 100.0
 offset_bottom = 49.0
 color = Color(0.14646932, 0.14646932, 0.14646932, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Top Wall" type="ColorRect" parent="Walls" unique_id=435394401]
 z_index = -6
+y_sort_enabled = true
 offset_top = -19.390625
 offset_right = 100.0
 offset_bottom = 0.609375
 color = Color(0.5764706, 0.47058824, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Thickness of top wall" type="ColorRect" parent="Walls" unique_id=1824285557]
 z_index = -5
+y_sort_enabled = true
 offset_left = -0.046875
 offset_top = -18.9375
 offset_right = 99.953125
 offset_bottom = -17.9375
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Right Wall" type="ColorRect" parent="Walls" unique_id=2127168190]
 z_index = -5
+y_sort_enabled = true
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -83,17 +93,21 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1, 1.475625)
 color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Left Wall" type="ColorRect" parent="Walls" unique_id=1391755555]
 z_index = -5
+y_sort_enabled = true
 offset_top = -18.9375
 offset_right = 1.0
 offset_bottom = 21.0625
 scale = Vector2(1, 1.4725001)
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=2045977426]
 z_index = 6
+y_sort_enabled = true
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -103,9 +117,11 @@ offset_right = 45.0
 offset_bottom = 49.0
 grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=41251187]
 z_index = 6
+y_sort_enabled = true
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -115,9 +131,11 @@ offset_right = 45.0
 offset_bottom = 39.90625
 grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=674823926]
 z_index = 6
+y_sort_enabled = true
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -128,9 +146,11 @@ offset_right = 100.0
 offset_bottom = 49.0
 grow_vertical = 0
 color = Color(0.5764706, 0.47058824, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=338787457]
 z_index = 6
+y_sort_enabled = true
 custom_minimum_size = Vector2(0, 1)
 anchors_preset = 2
 anchor_top = 1.0
@@ -141,8 +161,10 @@ offset_right = 100.0
 offset_bottom = 39.90625
 grow_vertical = 0
 color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Collider" type="StaticBody2D" parent="Walls" unique_id=1723827001]
+y_sort_enabled = true
 collision_mask = 4
 
 [node name="Back" type="CollisionShape2D" parent="Walls/Collider" unique_id=523492260]
@@ -171,6 +193,7 @@ scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_0qq72")
 
 [node name="Area2D" type="Area2D" parent="Walls" unique_id=2090900231]
+y_sort_enabled = true
 position = Vector2(50, 48.125)
 collision_layer = 2
 collision_mask = 4
@@ -181,6 +204,7 @@ position = Vector2(0, 0.3)
 shape = SubResource("RectangleShape2D_hwtxx")
 
 [node name="Statues" type="Node2D" parent="." unique_id=510912715]
+y_sort_enabled = true
 
 [node name="Apollo" parent="Statues" unique_id=1019239305 instance=ExtResource("3_1k3o2")]
 position = Vector2(-894, -375)
@@ -234,8 +258,9 @@ Aname = "CamFord Assyrian Relief"
 [node name="Buddha" parent="Statues" unique_id=1163809265 instance=ExtResource("3_1k3o2")]
 position = Vector2(-543, -41)
 artifact = ExtResource("12_r2fwe")
-customScale = Vector2(0.15, 0.15)
-customPosition = Vector2(-543, -210)
+customScale = Vector2(0.05, 0.05)
+customPosition = Vector2(-543, -180)
+Aname = "Helgo Buddha"
 
 [node name="North Hampton" parent="Statues" unique_id=830033964 instance=ExtResource("3_1k3o2")]
 position = Vector2(-175, -41)
@@ -285,20 +310,21 @@ position = Vector2(-175, 297)
 artifact = ExtResource("19_t1i47")
 customScale = Vector2(0.5, 0.5)
 customPosition = Vector2(-175, 95)
-Aname = "Hamilton Artemis"
+Aname = "Hamilton Aphrodite"
 
 [node name="parisian Clock" parent="Statues" unique_id=2070965507 instance=ExtResource("3_1k3o2")]
 position = Vector2(165, 297)
 artifact = ExtResource("20_t1i47")
 customScale = Vector2(0.1, 0.1)
 customPosition = Vector2(165, 140)
+Aname = "Parisian Clock"
 
 [node name="Artemis" parent="Statues" unique_id=1503248083 instance=ExtResource("3_1k3o2")]
 position = Vector2(516, 297)
 artifact = ExtResource("21_76jmc")
 customScale = Vector2(0.5, 0.5)
 customPosition = Vector2(516, 95)
-Aname = "Atemis"
+Aname = "Atemis And Stag"
 
 [node name="Napoleon\'s Pistol" parent="Statues" unique_id=1296794258 instance=ExtResource("3_1k3o2")]
 position = Vector2(884, 297)
@@ -309,10 +335,18 @@ Aname = "Napoleon's Pistol"
 
 [node name="LootButton" parent="." unique_id=1890356206 instance=ExtResource("5_0qq72")]
 z_index = 14
+y_sort_enabled = true
 position = Vector2(771, 480.00003)
 scale = Vector2(5, 5)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=907601178]
-zoom = Vector2(0.4, 0.4)
+[node name="Player" parent="." unique_id=517162128 instance=ExtResource("23_qs4c8")]
+y_sort_enabled = true
+scale = Vector2(4, 4)
+SPEED = 200
+
+[node name="Camera2D" parent="Player" index="2" unique_id=760324827]
+zoom = Vector2(1.5, 1.5)
 
 [connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]
+
+[editable path="Player"]
