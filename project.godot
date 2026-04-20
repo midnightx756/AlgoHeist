@@ -15,6 +15,10 @@ run/main_scene="uid://cjomfrji8jvg5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://cpp4fvyqgi0bq"
+
 [input]
 
 ui_left={

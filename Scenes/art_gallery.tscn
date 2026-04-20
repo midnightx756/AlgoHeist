@@ -202,22 +202,27 @@ scale = Vector2(0.15, 0.15)
 [node name="Doge" parent="Painting Stands" unique_id=499393629 instance=ExtResource("1_1qarx")]
 position = Vector2(0, -1720)
 Painting = ExtResource("3_skd8e")
+Aname = "Doge"
 
 [node name="Harambe" parent="Painting Stands" unique_id=1234204 instance=ExtResource("1_1qarx")]
 position = Vector2(913.33325, -1720)
 Painting = ExtResource("4_5lh14")
+Aname = "Harambe the Gorilla"
 
 [node name="Noice" parent="Painting Stands" unique_id=937797998 instance=ExtResource("1_1qarx")]
 position = Vector2(1793.3333, -1720)
 Painting = ExtResource("5_ycqxf")
+Aname = "Micheal Rosen"
 
 [node name="SpanishGuy" parent="Painting Stands" unique_id=1750224236 instance=ExtResource("1_1qarx")]
 position = Vector2(2626.6667, -1720)
 Painting = ExtResource("6_1c4wf")
+Aname = "Spanish Laughing Guy"
 
 [node name="HuhGirl" parent="Painting Stands" unique_id=1732200583 instance=ExtResource("1_1qarx")]
 position = Vector2(3540, -1720)
 Painting = ExtResource("7_ktf4l")
+Aname = "Huh Giel"
 
 [node name="SusLook" parent="Painting Stands" unique_id=87904814 instance=ExtResource("1_1qarx")]
 position = Vector2(4420, -1720)

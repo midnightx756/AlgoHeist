@@ -181,6 +181,7 @@ position = Vector2(-50, -20)
 position = Vector2(8.046875, 3.703125)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("4_ktpbq")
+Aname = "Ai Chip"
 
 [node name="Server2" parent="Servers" unique_id=807506263 instance=ExtResource("1_32ypq")]
 position = Vector2(21.59375, 3.703126)
@@ -190,16 +191,19 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(35.140625, 3.703126)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("5_1cr5x")
+Aname = "Authentication Key"
 
 [node name="BlackMail SSD" parent="Servers" unique_id=1360176955 instance=ExtResource("1_32ypq")]
 position = Vector2(92.0625, 3.703125)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("6_1cr5x")
+Aname = "Confidential Blackmail ssd"
 
 [node name="Cooling Fan" parent="Servers" unique_id=1892882692 instance=ExtResource("1_32ypq")]
 position = Vector2(64.875, 3.703125)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("7_exc5d")
+Aname = "Cooling Fan Unit"
 
 [node name="Server6" parent="Servers" unique_id=692214061 instance=ExtResource("1_32ypq")]
 position = Vector2(78.56251, 3.7031248)
@@ -210,12 +214,14 @@ z_index = 1
 position = Vector2(21.46875, 19.25)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("8_8nki4")
+Aname = "Crpto Wallet"
 
 [node name="Old CRT Monitor" parent="Servers" unique_id=1775102161 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(35.015625, 19.25)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("9_ywng4")
+Aname = "Old CRT Monitor"
 
 [node name="Server9" parent="Servers" unique_id=1066024003 instance=ExtResource("1_32ypq")]
 z_index = 1
@@ -227,6 +233,7 @@ z_index = 1
 position = Vector2(91.95312, 19.25)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("10_543ec")
+Aname = "Gold Server blade"
 
 [node name="Server11" parent="Servers" unique_id=1959642569 instance=ExtResource("1_32ypq")]
 z_index = 1
@@ -243,6 +250,7 @@ z_index = 1
 position = Vector2(91.796875, 33.875)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("11_v6f4u")
+Aname = "GPU unit"
 
 [node name="Server14" parent="Servers" unique_id=1630052776 instance=ExtResource("1_32ypq")]
 z_index = 1
@@ -254,18 +262,21 @@ z_index = 1
 position = Vector2(35.00001, 33.875)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("12_k6ppl")
+Aname = "Server Blade"
 
 [node name="Cables" parent="Servers" unique_id=1257250940 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(21.453127, 33.875)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("13_lbe2h")
+Aname = "Tangled Ethernet Cables"
 
 [node name="Lithium Battery" parent="Servers" unique_id=1519620289 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(7.921875, 33.875)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("12_qh7xg")
+Aname = "Lithium ion battery "
 
 [node name="Server" parent="Servers" unique_id=926229628 instance=ExtResource("1_32ypq")]
 z_index = 1

@@ -1,4 +1,4 @@
-extends Node2D
+extends BasicShelf
 
 @export var weight: int = 0;
 @export var profit: float = 0.0
@@ -23,9 +23,14 @@ func _ready() -> void:
 		profit = randf_range(0, 100000)
 		artifact_display.add_text("Name: " + Aname)
 
-func artifact_looted():
+func loot():
 	looted = true
+	artifact.visibility(false)
 	
+func returnItem():
+	looted = false
+	artifact.visibility(true)
+
 func get_stats():
 	if(looted): return null 
 	return {"Weight" : weight,

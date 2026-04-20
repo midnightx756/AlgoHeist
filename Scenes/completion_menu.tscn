@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://drg1e8qkoerle"]
+
+[ext_resource type="FontFile" uid="uid://by5ovinea2qhs" path="res://Assets/Fonts/alagard.ttf" id="1_ftnjt"]
+[ext_resource type="FontFile" uid="uid://cidhn35dn3wk2" path="res://Assets/Fonts/aurora-24.ttf" id="1_uftsa"]
+[ext_resource type="Script" uid="uid://deq2p5uhvfwm2" path="res://Scripts/Menu/completion_menu.gd" id="1_uu068"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a6hkh"]
+noise_type = 3
+seed = 6
+frequency = 0.0256
+offset = Vector3(636.36, -5.15, -31.35)
+fractal_type = 2
+fractal_octaves = 9
+fractal_gain = 0.2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a6hkh"]
+noise = SubResource("FastNoiseLite_a6hkh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftnjt"]
+texture = SubResource("NoiseTexture2D_a6hkh")
+modulate_color = Color(0, 0.39215687, 0.40784314, 1)
+
+[node name="CompletionMenu" type="Node2D" unique_id=145366742]
+script = ExtResource("1_uu068")
+winProfit = 1800.0
+playerProfit = 10000.0
+noise_speed = 20.0
+
+[node name="Panel" type="Panel" parent="." unique_id=697622214]
+offset_left = -295.0
+offset_top = -170.0
+offset_right = 295.0
+offset_bottom = 170.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ftnjt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1551326297]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 20.0
+offset_right = 495.0
+offset_bottom = 140.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_uftsa")
+theme_override_fonts/bold_font = ExtResource("1_ftnjt")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Congratulations!
+You've Successfully Completed the Game"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreBox" type="HBoxContainer" parent="Panel" unique_id=628631714]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = 158.5
+offset_right = -53.0
+offset_bottom = -141.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Score" type="Label" parent="Panel/ScoreBox" unique_id=125593875]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_uftsa")
+theme_override_font_sizes/font_size = 18
+text = "Your Profit:"
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Panel/ScoreBox" unique_id=1773908788]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_uftsa")
+theme_override_font_sizes/font_size = 18
+text = "0.000$"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel" unique_id=1793411048]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = 208.0
+offset_right = -75.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer2" unique_id=1389761245]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("1_uftsa")
+text = "Expected Profit: 00.00$
+Profit Successfully Maximised 
+You Win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=648272393]
+zoom = Vector2(2, 2)

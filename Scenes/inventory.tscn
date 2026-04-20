@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d02a058iu5yvs" path="res://Scripts/inventory.gd" id="1_wdn4f"]
 [ext_resource type="FontFile" uid="uid://dqy8aguwj5o31" path="res://Assets/Fonts/Pixel Digivolve.otf" id="2_k5gp2"]
+[ext_resource type="Script" uid="uid://bn7fseopx05m4" path="res://Scripts/item_list.gd" id="3_yxepq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xek5a"]
 bg_color = Color(0.28499854, 0.17076376, 0.0044144564, 1)
@@ -11,13 +12,70 @@ bg_color = Color(0.9985644, 0.806604, 0.5838689, 1)
 
 [node name="Inventory" type="Node2D" unique_id=1538437062]
 script = ExtResource("1_wdn4f")
+capacity = 900
 
-[node name="Panel" type="Panel" parent="." unique_id=25316288]
+[node name="Bg" type="Panel" parent="." unique_id=25316288]
 offset_left = -200.0
 offset_top = -250.0
 offset_right = 200.0
 offset_bottom = 250.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xek5a")
+
+[node name="CapacityContainer" type="HBoxContainer" parent="Bg" unique_id=128690094]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 417.0
+offset_right = -10.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Capacity" type="Label" parent="Bg/CapacityContainer" unique_id=768443186]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_k5gp2")
+text = "Capacity:"
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Bg/CapacityContainer" unique_id=1681136212]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_k5gp2")
+text = "0/10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ProfitContainer" type="HBoxContainer" parent="Bg" unique_id=1696763857]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 450.0
+offset_right = -10.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Profit" type="Label" parent="Bg/ProfitContainer" unique_id=124404656]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_k5gp2")
+text = "Profit:"
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Bg/ProfitContainer" unique_id=1614151674]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_k5gp2")
+text = "0$"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="ItemList" type="ItemList" parent="." unique_id=1081741025]
 offset_left = -190.0
@@ -26,26 +84,12 @@ offset_right = 190.0
 offset_bottom = 160.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wdn4f")
 allow_search = false
-max_text_lines = 2
-
-[node name="Weight" type="RichTextLabel" parent="." unique_id=1491270449]
-offset_left = -190.0
-offset_top = 166.0
-offset_right = 190.0
-offset_bottom = 196.0
-theme_override_fonts/normal_font = ExtResource("2_k5gp2")
-bbcode_enabled = true
-text = "Capacity: "
-
-[node name="Profit" type="RichTextLabel" parent="." unique_id=711682512]
-offset_left = -190.0
-offset_top = 195.0
-offset_right = 190.0
-offset_bottom = 225.0
-theme_override_fonts/normal_font = ExtResource("2_k5gp2")
-bbcode_enabled = true
-text = "Profit: "
+max_text_lines = 8
+item_count = 1
+script = ExtResource("3_yxepq")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2083985528]
-zoom = Vector2(2.5, 1.3)
+zoom = Vector2(1.3, 1.3)
 limit_enabled = false
+
+[connection signal="item_activated" from="ItemList" to="." method="_on_item_list_item_activated"]

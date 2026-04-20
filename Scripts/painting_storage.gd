@@ -1,8 +1,9 @@
-extends Node2D
+extends BasicShelf
 
 @export var weight: int;
 @export var profit: float;
 @export var Painting: Texture2D;
+@export var Aname: String
 
 @onready var sprite_2d: Sprite2D = $Panel/Sprite2D
 @onready var panel: Panel = $Panel
@@ -36,6 +37,7 @@ func loot() -> void:
 	panel.visibility(false)
 	
 func returnItem() -> void:
+	is_looted = false
 	panel.visibiity(true)
 	
 func returnTransform():
