@@ -34,12 +34,12 @@ func get_stats():
 	}
 func loot() -> void:
 	is_looted = false
-	panel.visibility(false)
+	panel.visible = false
 	
 func returnItem() -> void:
 	is_looted = false
-	panel.visibiity(true)
-	
+	panel.visible = true
+
 func returnTransform():
 	return transform
 	

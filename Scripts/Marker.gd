@@ -8,7 +8,7 @@ func _ready() -> void:
 	panel.add_theme_stylebox_override("panel", new_style)
 	add_to_group("Markers")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var stylebox = panel.get_theme_stylebox("panel")
 	panel.modulate = Color(randf()*1, randf()* 1, randf() *1, randf()* 1)
 	stylebox.set_corner_radius_all(randf()*40)

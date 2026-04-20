@@ -2,6 +2,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#await get_tree().create_timer(2.0).timeout
 	draw_edges()
 
 
@@ -10,12 +11,21 @@ func _process(_delta: float) -> void:
 	pass
 
 func on_node_clicked(target_node):
+	print("Received click from: ", target_node.room_id)
+	# 1. Dependency Check
 	if target_node.is_high_value and not GameManager.is_terminal_hacked:
 		print("ACCESS DENIED: Hacker Terminal not cleared!")
+		# Optional: Add UI feedback here
 		return 
 	
+	# 2. Persist the state
 	GameManager.current_room_id = target_node.room_id
-	get_tree().change_scene_to_file(target_node.scene_path) 
+	
+	# 3. Load the room
+	if target_node.scene_path != "":
+		get_tree().change_scene_to_file(target_node.scene_path)
+	else:
+		print("ERROR: No scene path defined for ", target_node.room_id)
 
 func draw_green_path(path):
 	var line = Line2D.new()
@@ -24,30 +34,19 @@ func draw_green_path(path):
 	add_child(line)
 	
 func draw_edges():
-	print("Attempting to draw lines for: ", get_tree().get_nodes_in_group("Rooms").size(), " rooms.")
-	# Clear old lines if any
-	for child in get_children():
-		if child is Line2D: child.queue_free()
-
-	var rooms = get_tree().get_nodes_in_group("Rooms")
-	print("Found rooms: ", rooms.size())
-	# Draw new lines
 	for node in get_tree().get_nodes_in_group("Rooms"):
-		print("Processing node: ", node.name)
-		for edge in node.neighbors:
-			# edge is an EdgeData resource
-			# edge.target is the NodePath you saved in the inspector
-			var neighbor = get_node_or_null(edge.target)
+		# node.neighbors is an Array[Node]
+		# node.weights is an Array[float]
+		for i in range(node.neighbors.size()):
+			var neighbor = node.neighbors[i]
+			
 			if neighbor:
-				print("Drawing line from: ", node.global_position, " to ", neighbor.global_position)
 				var line = Line2D.new()
-				var start_pos = to_local(node.global_position)
-				var end_pos = to_local(neighbor.global_position)
-				
-				line.add_point(start_pos)
-				line.add_point(end_pos)
-				
-				line.default_color = Color.RED
-				line.width = 10.0
-				line.z_index = 100 # Draw behind the rooms
+				line.add_point(node.global_position)
+				line.add_point(neighbor.global_position)
+				line.default_color = Color.GRAY
+				line.width = 2.0
+				line.z_index = -2
 				add_child(line)
+			else:
+				print("DEBUG: Neighbor is null at index ", i)

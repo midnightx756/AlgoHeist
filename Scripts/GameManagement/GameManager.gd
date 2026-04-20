@@ -2,20 +2,18 @@ extends Node
 
 var is_terminal_hacked: bool = false
 var current_room_id: String = "Lobby"
-#var player_inventory = []
+var current_capacity: int = 10
+var current_inventory_data = []
 
-func _on_item_list_item_activated(index: int) -> void:
-	var i: ItemList
-	var meta = i.get_item_metadata(index)
-	if meta == null:
+func return_item_to_shelf(shelf: BasicShelf):
+	if shelf == null:
 		return 
-	if meta.artifactHolder == null:
-		return
-	meta.artifactHolder.returnItem()
+	shelf.returnItem()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

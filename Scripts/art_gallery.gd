@@ -10,6 +10,7 @@ var marker := preload("res://Scenes/marker.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.current_capacity = self.capacity 
 	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
 
 func _on_loot_button_pressed():

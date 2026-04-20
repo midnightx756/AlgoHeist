@@ -40,6 +40,7 @@ script = ExtResource("1_2xcjn")
 capacity = 100
 
 [node name="Walls" type="Node2D" parent="." unique_id=1376334247]
+y_sort_enabled = true
 position = Vector2(-50, -20)
 
 [node name="Floor" type="ColorRect" parent="Walls" unique_id=28434771]
@@ -168,6 +169,7 @@ position = Vector2(50, 48.125)
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_m4m53")
+levelPath = "res://Scenes/WorldMap.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=754174025]
 position = Vector2(0, 0.3)
@@ -186,6 +188,7 @@ Aname = "Ai Chip"
 [node name="Server2" parent="Servers" unique_id=807506263 instance=ExtResource("1_32ypq")]
 position = Vector2(21.59375, 3.703126)
 scale = Vector2(0.2, 0.2)
+Aname = "Empty1"
 
 [node name="Auth Key" parent="Servers" unique_id=895337868 instance=ExtResource("1_32ypq")]
 position = Vector2(35.140625, 3.703126)
@@ -208,6 +211,7 @@ Aname = "Cooling Fan Unit"
 [node name="Server6" parent="Servers" unique_id=692214061 instance=ExtResource("1_32ypq")]
 position = Vector2(78.56251, 3.7031248)
 scale = Vector2(0.2, 0.2)
+Aname = "Empty2"
 
 [node name="Crypto Wallet" parent="Servers" unique_id=569657743 instance=ExtResource("1_32ypq")]
 z_index = 1
@@ -227,6 +231,7 @@ Aname = "Old CRT Monitor"
 z_index = 1
 position = Vector2(48.54687, 19.25)
 scale = Vector2(0.2, 0.2)
+Aname = "Empty3"
 
 [node name="Gold Server Blade" parent="Servers" unique_id=71639478 instance=ExtResource("1_32ypq")]
 z_index = 1
@@ -239,11 +244,13 @@ Aname = "Gold Server blade"
 z_index = 1
 position = Vector2(8.078133, 19.25)
 scale = Vector2(0.2, 0.2)
+Aname = "Empty4"
 
 [node name="Server12" parent="Servers" unique_id=976687230 instance=ExtResource("1_32ypq")]
 z_index = 1
 position = Vector2(78.40624, 19.25)
 scale = Vector2(0.2, 0.2)
+Aname = "Empty5"
 
 [node name="GPU" parent="Servers" unique_id=1268122020 instance=ExtResource("1_32ypq")]
 z_index = 1
@@ -256,6 +263,7 @@ Aname = "GPU unit"
 z_index = 1
 position = Vector2(64.70312, 33.859375)
 scale = Vector2(0.2, 0.2)
+Aname = "Empty6"
 
 [node name="Server Blade" parent="Servers" unique_id=1417695154 instance=ExtResource("1_32ypq")]
 z_index = 1
@@ -282,29 +290,35 @@ Aname = "Lithium ion battery "
 z_index = 1
 position = Vector2(78.40624, 33.875)
 scale = Vector2(0.2, 0.2)
+Aname = "Empty7"
 
 [node name="Computer" parent="." unique_id=925157900 instance=ExtResource("2_y5crd")]
+y_sort_enabled = true
 position = Vector2(-0.09375, -11.312498)
 scale = Vector2(0.12, 0.078)
 
 [node name="LootButton" parent="." unique_id=1890356206 instance=ExtResource("16_lt3kd")]
 z_index = 11
+y_sort_enabled = true
 position = Vector2(39.75, 24.578127)
 scale = Vector2(0.3, 0.3)
 
 [node name="Player" parent="." unique_id=517162128 instance=ExtResource("17_bnb56")]
-z_index = 11
+z_index = 1
 y_sort_enabled = true
 position = Vector2(-0.46875, 15.546875)
 scale = Vector2(0.2, 0.2)
 SPEED = 1000
-zoomDimesion = Vector2(1, 1)
+zoomDimesion = Vector2(0.5, 0.5)
 
 [node name="Camera2D" parent="Player" index="2" unique_id=760324827]
 zoom = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=307415108]
+y_sort_enabled = true
 position = Vector2(-50, -20)
 zoom = Vector2(0.5, 0.5)
+
+[connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]
 
 [editable path="Player"]

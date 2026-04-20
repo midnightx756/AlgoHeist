@@ -13,6 +13,8 @@ var marker := preload("res://Scenes/marker.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.current_capacity = self.capacity 
+	
 	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
 
 #The function that processes loot
@@ -23,7 +25,7 @@ func _on_loot_button_pressed():
 	var s:= 0
 	for sculp in sculpArr:
 		var sc = sculp.get_stats()
-		if(s != null):
+		if(sc != null):
 			statsArr.push_back(sc)
 			s+=1
 			
@@ -72,9 +74,9 @@ func Knapsack01(arr, size):
 #Higlighting the most valuable artifacts
 func highlight(arr, indices):
 	for i in indices:
-		var marker = marker.instantiate()
-		add_child(marker)
-		marker.global_position = arr[i]["Transform"]
+		var markerr = marker.instantiate()
+		add_child(markerr)
+		markerr.global_position = arr[i]["Transform"]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

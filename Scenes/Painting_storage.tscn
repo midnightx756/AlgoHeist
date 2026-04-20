@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ynwk43wd4q6a" path="res://Scenes/Pillar.tscn" id="1_ic3a0"]
 [ext_resource type="Script" uid="uid://cqa48n7vue4mw" path="res://Scripts/painting_storage.gd" id="1_vkfkr"]
+[ext_resource type="Script" uid="uid://dqtfxt3ncsx56" path="res://Scripts/Shelves/ShelfProxy.gd" id="2_vkfkr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8gsj"]
 
@@ -19,6 +20,7 @@ y_sort_enabled = true
 script = ExtResource("1_vkfkr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=910913930]
+script = ExtResource("2_vkfkr")
 
 [node name="Panel" type="Panel" parent="StaticBody2D" unique_id=1336672577]
 offset_left = -256.0

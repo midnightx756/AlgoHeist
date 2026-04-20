@@ -16,6 +16,9 @@ func updateLabels(newcap, newprof) -> void:
 	profitValueLabel.text = "%.3f $" % newprof
 	
 func add_item_to_inventory(aname, weight, profit, id, icon):
+	if(item_list.get_stats() + weight > capacity):
+		print("Item Csnnot be added, inventory is full")
+		return
 	var artifactd = ArtifactData.new()
 	artifactd.setup(aname, weight, profit, id, icon)
 	var stats = item_list.add_artifact_to_inventory(artifactd)

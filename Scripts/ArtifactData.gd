@@ -7,10 +7,10 @@ extends Node2D
 @export var artifactHolder: BasicShelf
 @export var Icon: Texture2D;
 
-func setup(Name, Weight, Profit, TakenAt, AIcon) -> void:
+func setup(Name, Weight, Profit, Holder, AIcon) -> void:
 	self.artifactName = Name
 	self.artifactWeight = Weight
 	self.artifactProfit = Profit
-	self.artifactHolder = TakenAt
+	self.artifactHolder = Holder
 	self.Icon = AIcon
 	

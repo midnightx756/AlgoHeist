@@ -2,95 +2,64 @@
 
 [ext_resource type="Script" uid="uid://dsy6imblag2dy" path="res://Scripts/Graphs/RoomNode.gd" id="1_h0vor"]
 [ext_resource type="Script" uid="uid://h65xn8w4y3b4" path="res://Scripts/Graphs/world_map.gd" id="1_lgebn"]
-[ext_resource type="Script" uid="uid://cr2esdn42kfu4" path="res://Scripts/Graphs/EdgeData.gd" id="3_5wnfc"]
 [ext_resource type="Texture2D" uid="uid://s3sc7jwrnwc1" path="res://Assets/Sprites/MrBean.png" id="4_nnt0k"]
 [ext_resource type="Texture2D" uid="uid://ck520vv5d4fvo" path="res://Assets/Sprites/GuennolLioness.jpg" id="5_ovel5"]
 [ext_resource type="Texture2D" uid="uid://cxxj1gickcn07" path="res://Assets/Sprites/ServerBlade.jpg" id="6_6g17r"]
 
-[sub_resource type="Resource" id="Resource_ovel5"]
-script = ExtResource("3_5wnfc")
-target = NodePath("../Server")
-weight = 1000.0
-metadata/_custom_type_script = "uid://cr2esdn42kfu4"
-
-[sub_resource type="Resource" id="Resource_6g17r"]
-script = ExtResource("3_5wnfc")
-target = NodePath("../Sculpture")
-weight = 500.0
-metadata/_custom_type_script = "uid://cr2esdn42kfu4"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgebn"]
-
-[sub_resource type="Resource" id="Resource_k2sq4"]
-script = ExtResource("3_5wnfc")
-target = NodePath("../Server")
-weight = 1000.0
-metadata/_custom_type_script = "uid://cr2esdn42kfu4"
-
-[sub_resource type="Resource" id="Resource_e6b1v"]
-script = ExtResource("3_5wnfc")
-target = NodePath("../Gallery")
-weight = 500.0
-metadata/_custom_type_script = "uid://cr2esdn42kfu4"
-
-[sub_resource type="Resource" id="Resource_nnt0k"]
-script = ExtResource("3_5wnfc")
-target = NodePath("../Gallery")
-weight = 1000.0
-metadata/_custom_type_script = "uid://cr2esdn42kfu4"
-
-[sub_resource type="Resource" id="Resource_5wnfc"]
-script = ExtResource("3_5wnfc")
-target = NodePath("../Sculpture")
-weight = 10000.0
-metadata/_custom_type_script = "uid://cr2esdn42kfu4"
 
 [node name="Graphnodes" type="Node2D" unique_id=942376435]
 script = ExtResource("1_lgebn")
 
-[node name="Gallery" type="Area2D" parent="." unique_id=1225988341]
+[node name="Gallery" type="Area2D" parent="." unique_id=1225988341 node_paths=PackedStringArray("neighbors")]
 position = Vector2(120, -58)
 script = ExtResource("1_h0vor")
 room_id = "Gallery"
 is_high_value = true
 scene_path = "res://Scenes/art_gallery.tscn"
-neighbors = Array[ExtResource("3_5wnfc")]([SubResource("Resource_ovel5"), SubResource("Resource_6g17r")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gallery" unique_id=415561315]
-shape = SubResource("RectangleShape2D_lgebn")
+neighbors = [NodePath("."), NodePath("../Server")]
+weights = Array[float]([500.0, 1000.0])
 
 [node name="Sprite2D" type="Sprite2D" parent="Gallery" unique_id=393878467]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_nnt0k")
 
-[node name="Sculpture" type="Area2D" parent="." unique_id=1469447402]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gallery" unique_id=415561315]
+z_index = 1
+shape = SubResource("RectangleShape2D_lgebn")
+
+[node name="Sculpture" type="Area2D" parent="." unique_id=1469447402 node_paths=PackedStringArray("neighbors")]
 position = Vector2(-68, 33)
 script = ExtResource("1_h0vor")
 room_id = "Sculpture"
 is_high_value = true
 scene_path = "res://Scenes/Scultpture_room.tscn"
-neighbors = Array[ExtResource("3_5wnfc")]([SubResource("Resource_k2sq4"), SubResource("Resource_e6b1v")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sculpture" unique_id=1919808283]
-shape = SubResource("RectangleShape2D_lgebn")
+neighbors = [NodePath("../Gallery"), NodePath("../Server")]
+weights = Array[float]([500.0, 1000.0])
 
 [node name="Sprite2D" type="Sprite2D" parent="Sculpture" unique_id=1950153298]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_ovel5")
 
-[node name="Server" type="Area2D" parent="." unique_id=319231009]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sculpture" unique_id=1919808283]
+z_index = 1
+shape = SubResource("RectangleShape2D_lgebn")
+
+[node name="Server" type="Area2D" parent="." unique_id=319231009 node_paths=PackedStringArray("neighbors")]
 position = Vector2(185, 50)
 script = ExtResource("1_h0vor")
 room_id = "Server"
 scene_path = "res://Scenes/ServerRoom.tscn"
-neighbors = Array[ExtResource("3_5wnfc")]([SubResource("Resource_nnt0k"), SubResource("Resource_5wnfc")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Server" unique_id=648465190]
-shape = SubResource("RectangleShape2D_lgebn")
+neighbors = [NodePath("../Gallery"), NodePath("../Sculpture")]
+weights = Array[float]([1000.0, 1000.0])
 
 [node name="Sprite2D" type="Sprite2D" parent="Server" unique_id=1366071757]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_6g17r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Server" unique_id=648465190]
+z_index = 1
+shape = SubResource("RectangleShape2D_lgebn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=496957165]
 position = Vector2(53, 27)

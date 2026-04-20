@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 @onready var light_1: ColorRect = $"Blinking Light 1"
 @onready var light_2: ColorRect = $"Blinking light 2"

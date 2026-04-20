@@ -89,3 +89,10 @@ shape = SubResource("RectangleShape2D_yoq75")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=760324827]
 zoom = Vector2(5, 5)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=821186846]
+position = Vector2(0, 30)
+rotation = 3.1415927
+target_position = Vector2(6.6441307e-06, 76)
+collision_mask = 3
+collide_with_areas = true

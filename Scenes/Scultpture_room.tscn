@@ -198,6 +198,7 @@ position = Vector2(50, 48.125)
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_l8j0i")
+levelPath = "res://Scenes/WorldMap.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=1088824512]
 position = Vector2(0, 0.3)
@@ -270,7 +271,6 @@ customPosition = Vector2(-175, -220)
 Aname = "North Hampton Sechema"
 
 [node name="Princess Katherine" parent="Statues" unique_id=673923896 instance=ExtResource("3_1k3o2")]
-z_index = 6
 position = Vector2(165, -41)
 artifact = ExtResource("14_p5dgh")
 customScale = Vector2(0.15, 0.15)
@@ -343,6 +343,7 @@ scale = Vector2(5, 5)
 y_sort_enabled = true
 scale = Vector2(4, 4)
 SPEED = 200
+zoomDimesion = Vector2(1, 1)
 
 [node name="Camera2D" parent="Player" index="2" unique_id=760324827]
 zoom = Vector2(1.5, 1.5)

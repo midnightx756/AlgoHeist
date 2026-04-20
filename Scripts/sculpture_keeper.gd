@@ -25,11 +25,11 @@ func _ready() -> void:
 
 func loot():
 	looted = true
-	artifact.visibility(false)
+	artifact_holder.visible = false 
 	
 func returnItem():
 	looted = false
-	artifact.visibility(true)
+	artifact_holder.visible = true
 
 func get_stats():
 	if(looted): return null 

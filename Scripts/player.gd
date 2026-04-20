@@ -6,12 +6,11 @@ extends CharacterBody2D
 const JUMP_VELOCITY = -400.0
 @onready var animatedPlayer: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var interaction_ray: RayCast2D = $RayCast2D
 
 var prevDirection = 0
-func _ready():
-	return camera_2d
+func _physics_process(_delta: float) -> void:
 	camera_2d.zoom = zoomDimesion
-func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	#if not is_on_floor():
 		#velocity += get_gravity() * delta
@@ -53,3 +52,12 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+	
+func _input(event):
+	if event.is_action_pressed("interact"): # Map "E" to "interact" in Input Map
+		if interaction_ray.is_colliding():
+			var object = interaction_ray.get_collider()
+			if object is BasicShelf:
+				object.loot() # This triggers the overridden loot() method!
+			else:
+				print(object)

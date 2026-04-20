@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ceqaj3cwsc6sd" path="res://Scripts/rack.gd" id="1_3mool"]
 [ext_resource type="Script" uid="uid://bbs3isr6ku5l3" path="res://Scripts/server_rack.gd" id="1_6wum4"]
+[ext_resource type="Script" uid="uid://dqtfxt3ncsx56" path="res://Scripts/Shelves/ShelfProxy.gd" id="2_21f0j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ybm7"]
 size = Vector2(20, 29.999996)
@@ -9,53 +10,56 @@ size = Vector2(20, 29.999996)
 [node name="Server" type="Node2D" unique_id=1348484573]
 script = ExtResource("1_3mool")
 
-[node name="ServerRack" type="StaticBody2D" parent="." unique_id=173781170]
+[node name="Body" type="StaticBody2D" parent="." unique_id=173781170]
 y_sort_enabled = true
+script = ExtResource("2_21f0j")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Body" unique_id=232818004]
+position = Vector2(0, 11.999992)
+scale = Vector2(3.2, 0.8)
+shape = SubResource("RectangleShape2D_6ybm7")
+debug_color = Color(1.6364455e-06, 0.61665934, 0.5939622, 0.41960785)
+
+[node name="ServerRack2" type="Node2D" parent="." unique_id=1616722191]
 script = ExtResource("1_6wum4")
 
-[node name="TopFace" type="ColorRect" parent="ServerRack" unique_id=922969560]
-offset_left = -32.0
-offset_top = -64.0
-offset_right = 32.0
-offset_bottom = -40.0
-color = Color(0.2901961, 0.33333334, 0.4, 1)
-
-[node name="FrontFace" type="ColorRect" parent="ServerRack" unique_id=1596162033]
+[node name="FrontFace" type="ColorRect" parent="ServerRack2" unique_id=1596162033]
 offset_left = -32.0
 offset_top = -40.0
 offset_right = 32.0
 offset_bottom = 24.0
 color = Color(0.1764706, 0.21568628, 0.28235295, 1)
 
-[node name="Screen" type="ColorRect" parent="ServerRack" unique_id=1270399752]
+[node name="Screen" type="ColorRect" parent="ServerRack2" unique_id=1270399752]
 offset_left = -24.0
 offset_top = -32.0
 offset_right = 24.0
 offset_bottom = 16.0
 color = Color(0.101960786, 0.1254902, 0.17254902, 1)
 
-[node name="Blinking Light 1" type="ColorRect" parent="ServerRack" unique_id=196043140]
+[node name="Blinking Light 1" type="ColorRect" parent="ServerRack2" unique_id=196043140]
 offset_left = -16.0
 offset_top = -20.0
 offset_right = -8.0
 offset_bottom = -16.0
 color = Color(0.28235295, 0.73333335, 0.47058824, 1)
 
-[node name="Blinking light 2" type="ColorRect" parent="ServerRack" unique_id=1518537030]
+[node name="Blinking light 2" type="ColorRect" parent="ServerRack2" unique_id=1518537030]
 offset_left = -16.0
 offset_top = -10.0
 offset_right = -8.0
 offset_bottom = -6.0
 color = Color(0.9607843, 0.39607844, 0.39607844, 1)
 
-[node name="Blinking light 3" type="ColorRect" parent="ServerRack" unique_id=622641196]
+[node name="Blinking light 3" type="ColorRect" parent="ServerRack2" unique_id=622641196]
 offset_left = -16.0
 offset_right = -8.0
 offset_bottom = 4.0
 color = Color(0.26421028, 0.63060343, 0.93823195, 1)
 
-[node name="Hitbox" type="CollisionShape2D" parent="ServerRack" unique_id=232818004]
-position = Vector2(0, 11.999992)
-scale = Vector2(3.2, 0.8)
-shape = SubResource("RectangleShape2D_6ybm7")
-debug_color = Color(1.6364455e-06, 0.61665934, 0.5939622, 0.41960785)
+[node name="TopFace" type="ColorRect" parent="ServerRack2" unique_id=922969560]
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 32.0
+offset_bottom = -40.0
+color = Color(0.2901961, 0.33333334, 0.4, 1)
