@@ -12,7 +12,7 @@ bg_color = Color(0.9985644, 0.806604, 0.5838689, 1)
 
 [node name="Inventory" type="Node2D" unique_id=1538437062]
 script = ExtResource("1_wdn4f")
-capacity = 900
+capacity = 1000
 
 [node name="Bg" type="Panel" parent="." unique_id=25316288]
 offset_left = -200.0

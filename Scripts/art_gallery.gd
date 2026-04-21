@@ -1,6 +1,11 @@
 extends Node2D
 
 @export var capacity: int = 10;
+
+@export var camera_zoom: Vector2 = Vector2(1, 1)
+@export var player_zoom: Vector2 = Vector2(1, 1)
+@export var player_speed: int = 300
+
 @onready var painting_stands= $"Painting Stands";
 
 var maxSum = 0
@@ -72,8 +77,8 @@ func Knapsack_01(arr, size):
 	return loot
 			
 func Highlight(baseArr, lootArr):
-	#for i in get_tree().get_nodes_in_group("Markers"):
-		#i.free()
+	for i in get_tree().get_nodes_in_group("Markers"):
+		i.free()
 		
 	print("Looted Items: ")
 	for i in lootArr:
@@ -82,3 +87,6 @@ func Highlight(baseArr, lootArr):
 		new_marker.position = baseArr[i]["Transform"]
 		add_child(new_marker)
 			
+# The orchestrator calls this
+func get_room_settings():
+	return {"zoom": camera_zoom, "speed": player_speed, "scale" : player_zoom}

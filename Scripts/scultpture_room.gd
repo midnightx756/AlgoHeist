@@ -2,6 +2,9 @@ extends Node2D
 
 #The capacity constraint
 @export var capacity: int = 20
+@export var camera_zoom: Vector2 = Vector2(1, 1)
+@export var player_zoom: Vector2 = Vector2(1, 1)
+@export var player_speed: int = 300
 
 #Get the statue node from the scene, button from file system
 @onready var statues: Node2D = $Statues
@@ -14,7 +17,6 @@ var marker := preload("res://Scenes/marker.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.current_capacity = self.capacity 
-	
 	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
 
 #The function that processes loot
@@ -77,6 +79,10 @@ func highlight(arr, indices):
 		var markerr = marker.instantiate()
 		add_child(markerr)
 		markerr.global_position = arr[i]["Transform"]
+
+# The orchestrator calls this
+func get_room_settings():
+	return {"zoom": camera_zoom, "speed": player_speed, "scale" : player_zoom}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

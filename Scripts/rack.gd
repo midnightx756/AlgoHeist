@@ -13,7 +13,7 @@ func _ready() -> void:
 		contains = true
 		did_contain = true
 		profit = randf_range(0.0, 100000)
-		weight = randi_range(0.0, 100)
+		weight = randi_range(0, 100)
 		
 
 func returnStats():

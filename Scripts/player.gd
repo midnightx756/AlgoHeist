@@ -2,15 +2,20 @@ extends CharacterBody2D
 
 
 @export var SPEED = 30
-@export var zoomDimesion : Vector2= Vector2(5.0, 5.0)
+#@export var zoomDimesion : Vector2= Vector2(5.0, 5.0)
 const JUMP_VELOCITY = -400.0
 @onready var animatedPlayer: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var interaction_ray: RayCast2D = $RayCast2D
 
+func _ready():
+	camera_2d.enabled = true
+	camera_2d.make_current()
+
 var prevDirection = 0
 func _physics_process(_delta: float) -> void:
-	camera_2d.zoom = zoomDimesion
+	#camera_2d.zoom = zoomDimesion
+	
 	# Add the gravity.
 	#if not is_on_floor():
 		#velocity += get_gravity() * delta

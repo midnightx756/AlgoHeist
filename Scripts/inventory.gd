@@ -7,7 +7,8 @@ extends Node2D
 @export var capacity:int = 10
 func _ready() -> void:
 	updateLabels(0,0.0)
-	add_item_to_inventory("Graham", 900,100000, null, preload("res://Assets/Sprites/AIPrototype.jpg"))
+	add_item_to_inventory("Graham", 9,100000, null, preload("res://Assets/Sprites/AIPrototype.jpg"))
+	add_item_to_inventory("Dragoon", 900,100000, null, preload("res://Assets/Sprites/Leonardo-da-Vincis-codex-Leicester.jpg"))
 
 func updateLabels(newcap, newprof) -> void:
 	var weightValueLabel = capacity_container.get_child(1)
@@ -16,7 +17,7 @@ func updateLabels(newcap, newprof) -> void:
 	profitValueLabel.text = "%.3f $" % newprof
 	
 func add_item_to_inventory(aname, weight, profit, id, icon):
-	if(item_list.get_stats() + weight > capacity):
+	if(item_list.getStats()["Weight"] + weight > capacity):
 		print("Item Csnnot be added, inventory is full")
 		return
 	var artifactd = ArtifactData.new()

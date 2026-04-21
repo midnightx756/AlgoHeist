@@ -33,7 +33,7 @@ func get_stats():
 		"Profit" : profit
 	}
 func loot() -> void:
-	is_looted = false
+	is_looted = true
 	panel.visible = false
 	
 func returnItem() -> void:

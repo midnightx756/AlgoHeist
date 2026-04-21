@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dy0jem0ydd6iy" path="res://Assets/Sprites/ParisianClock.jpg" id="20_t1i47"]
 [ext_resource type="Texture2D" uid="uid://cui4btdc1sldo" path="res://Assets/Sprites/ArtemisAndStag.jpg" id="21_76jmc"]
 [ext_resource type="Texture2D" uid="uid://ctgamk8f2khxb" path="res://Assets/Sprites/Napoleon's_pistol.jpg" id="22_qs4c8"]
-[ext_resource type="PackedScene" uid="uid://dq73kiyfk2npo" path="res://Scenes/Player.tscn" id="23_qs4c8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_338xv"]
 size = Vector2(99.875, 1.046875)
@@ -42,7 +41,8 @@ size = Vector2(10, 1.125)
 [node name="Node2D" type="Node2D" unique_id=236250369]
 y_sort_enabled = true
 script = ExtResource("1_338xv")
-capacity = 100
+capacity = 300
+player_speed = 200
 
 [node name="Walls" type="Node2D" parent="." unique_id=1958675005]
 y_sort_enabled = true
@@ -339,15 +339,7 @@ y_sort_enabled = true
 position = Vector2(771, 480.00003)
 scale = Vector2(5, 5)
 
-[node name="Player" parent="." unique_id=517162128 instance=ExtResource("23_qs4c8")]
-y_sort_enabled = true
-scale = Vector2(4, 4)
-SPEED = 200
-zoomDimesion = Vector2(1, 1)
-
-[node name="Camera2D" parent="Player" index="2" unique_id=760324827]
-zoom = Vector2(1.5, 1.5)
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1790017202]
+position = Vector2(0, 407)
 
 [connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]
-
-[editable path="Player"]

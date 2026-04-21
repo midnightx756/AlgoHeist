@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c6fr85vrltnwe"]
 
 [ext_resource type="Script" uid="uid://b6qt1584i7iqu" path="res://Scripts/Level_change.gd" id="1_bljg6"]
-[ext_resource type="PackedScene" uid="uid://dq73kiyfk2npo" path="res://Scenes/Player.tscn" id="2_ce7nt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bt2g3"]
 size = Vector2(99.875, 1.046875)
@@ -157,7 +156,7 @@ script = ExtResource("1_bljg6")
 position = Vector2(0, 0.3)
 shape = SubResource("RectangleShape2D_ywg0w")
 
-[node name="Player" parent="." unique_id=517162128 instance=ExtResource("2_ce7nt")]
-scale = Vector2(0.2, 0.2)
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=947552453]
+position = Vector2(0, 20)
 
 [connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]

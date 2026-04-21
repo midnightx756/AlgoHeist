@@ -23,11 +23,11 @@ func on_node_clicked(target_node):
 	
 	# 3. Load the room
 	if target_node.scene_path != "":
-		get_tree().change_scene_to_file(target_node.scene_path)
+		get_tree().root.get_node("MainGame").load_room(target_node.scene_path)
 	else:
 		print("ERROR: No scene path defined for ", target_node.room_id)
 
-func draw_green_path(path):
+func draw_green_path(_path):
 	var line = Line2D.new()
 	line.default_color = Color.GREEN
 	# Loop through path nodes and draw the line

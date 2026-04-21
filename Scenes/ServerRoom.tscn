@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://4xxu2b38d4li" path="res://Assets/Sprites/LithiumIonBattery.jpg" id="12_qh7xg"]
 [ext_resource type="Texture2D" uid="uid://breqyx8wi8nhl" path="res://Assets/Sprites/TangledCables.jpg" id="13_lbe2h"]
 [ext_resource type="PackedScene" uid="uid://oc0in4q4e88s" path="res://Scenes/loot_button.tscn" id="16_lt3kd"]
-[ext_resource type="PackedScene" uid="uid://dq73kiyfk2npo" path="res://Scenes/Player.tscn" id="17_bnb56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5crd"]
 size = Vector2(99.875, 1.046875)
@@ -37,7 +36,9 @@ size = Vector2(10, 1.125)
 y_sort_enabled = true
 scale = Vector2(64, 64)
 script = ExtResource("1_2xcjn")
+player_zoom = Vector2(10, 10)
 capacity = 100
+player_speed = 1000
 
 [node name="Walls" type="Node2D" parent="." unique_id=1376334247]
 y_sort_enabled = true
@@ -214,80 +215,68 @@ scale = Vector2(0.2, 0.2)
 Aname = "Empty2"
 
 [node name="Crypto Wallet" parent="Servers" unique_id=569657743 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(21.46875, 19.25)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("8_8nki4")
 Aname = "Crpto Wallet"
 
 [node name="Old CRT Monitor" parent="Servers" unique_id=1775102161 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(35.015625, 19.25)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("9_ywng4")
 Aname = "Old CRT Monitor"
 
 [node name="Server9" parent="Servers" unique_id=1066024003 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(48.54687, 19.25)
 scale = Vector2(0.2, 0.2)
 Aname = "Empty3"
 
 [node name="Gold Server Blade" parent="Servers" unique_id=71639478 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(91.95312, 19.25)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("10_543ec")
 Aname = "Gold Server blade"
 
 [node name="Server11" parent="Servers" unique_id=1959642569 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(8.078133, 19.25)
 scale = Vector2(0.2, 0.2)
 Aname = "Empty4"
 
 [node name="Server12" parent="Servers" unique_id=976687230 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(78.40624, 19.25)
 scale = Vector2(0.2, 0.2)
 Aname = "Empty5"
 
 [node name="GPU" parent="Servers" unique_id=1268122020 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(91.796875, 33.875)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("11_v6f4u")
 Aname = "GPU unit"
 
 [node name="Server14" parent="Servers" unique_id=1630052776 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(64.70312, 33.859375)
 scale = Vector2(0.2, 0.2)
 Aname = "Empty6"
 
 [node name="Server Blade" parent="Servers" unique_id=1417695154 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(35.00001, 33.875)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("12_k6ppl")
 Aname = "Server Blade"
 
 [node name="Cables" parent="Servers" unique_id=1257250940 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(21.453127, 33.875)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("13_lbe2h")
 Aname = "Tangled Ethernet Cables"
 
 [node name="Lithium Battery" parent="Servers" unique_id=1519620289 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(7.921875, 33.875)
 scale = Vector2(0.2, 0.2)
 lootItem = ExtResource("12_qh7xg")
 Aname = "Lithium ion battery "
 
 [node name="Server" parent="Servers" unique_id=926229628 instance=ExtResource("1_32ypq")]
-z_index = 1
 position = Vector2(78.40624, 33.875)
 scale = Vector2(0.2, 0.2)
 Aname = "Empty7"
@@ -303,22 +292,7 @@ y_sort_enabled = true
 position = Vector2(39.75, 24.578127)
 scale = Vector2(0.3, 0.3)
 
-[node name="Player" parent="." unique_id=517162128 instance=ExtResource("17_bnb56")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-0.46875, 15.546875)
-scale = Vector2(0.2, 0.2)
-SPEED = 1000
-zoomDimesion = Vector2(0.5, 0.5)
-
-[node name="Camera2D" parent="Player" index="2" unique_id=760324827]
-zoom = Vector2(0.5, 0.5)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=307415108]
-y_sort_enabled = true
-position = Vector2(-50, -20)
-zoom = Vector2(0.5, 0.5)
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=345950036]
+position = Vector2(0, 21.546875)
 
 [connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]
-
-[editable path="Player"]

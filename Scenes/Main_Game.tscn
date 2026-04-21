@@ -1,9 +1,23 @@
 [gd_scene format=3 uid="uid://cjomfrji8jvg5"]
 
-[node name="MainScene" type="Node2D" unique_id=879337936]
+[ext_resource type="PackedScene" uid="uid://cc1yru8poddq7" path="res://Scenes/inventory.tscn" id="1_ev27r"]
+[ext_resource type="Script" uid="uid://crbvyfmacr0pp" path="res://Scripts/GameManagement/MainGame.gd" id="1_u6rf3"]
+[ext_resource type="PackedScene" uid="uid://bvfq6btb43kuo" path="res://Scenes/WorldMap.tscn" id="2_u6rf3"]
+[ext_resource type="PackedScene" uid="uid://dq73kiyfk2npo" path="res://Scenes/Player.tscn" id="4_6quq6"]
+
+[node name="MainGame" type="Node2D" unique_id=879337936]
+script = ExtResource("1_u6rf3")
 
 [node name="AlgoManager" type="Node2D" parent="." unique_id=1804548491]
 
-[node name="UI" type="Node2D" parent="." unique_id=241471176]
+[node name="SceneContainer" type="Node2D" parent="." unique_id=1662731050]
 
-[node name="Level" type="Node2D" parent="." unique_id=1662731050]
+[node name="UI2" type="CanvasLayer" parent="." unique_id=577307546]
+
+[node name="Inventory" parent="UI2" unique_id=1538437062 instance=ExtResource("1_ev27r")]
+visible = false
+
+[node name="Graphnodes" parent="UI2" unique_id=942376435 instance=ExtResource("2_u6rf3")]
+visible = false
+
+[node name="Player" parent="." unique_id=517162128 instance=ExtResource("4_6quq6")]

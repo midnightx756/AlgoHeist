@@ -1,7 +1,12 @@
 extends Node2D
-#Run 0/1 Knapsack over here
+
 @onready var servers: Node2D = $Servers
+@export var player_zoom: Vector2 = Vector2(5, 5)
 @export var capacity: int = 10
+
+@export var camera_zoom: Vector2 = Vector2(0.2, 0.2)
+@export var player_speed: int = 300
+
 var marker := preload("res://Scenes/marker.tscn")
 
 @onready var button := get_node("LootButton/Button")
@@ -72,7 +77,10 @@ func Highlight(array, indices):
 		newm.global_position = array[i]["Transform"]
 		newm.scale = Vector2(0.15, 0.15)
 		
-		
+# The orchestrator calls this
+func get_room_settings():
+	return {"zoom": camera_zoom, "speed": player_speed, "scale": player_zoom}
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass
