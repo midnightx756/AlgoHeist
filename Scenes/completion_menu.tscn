@@ -22,9 +22,9 @@ modulate_color = Color(0, 0.39215687, 0.40784314, 1)
 
 [node name="CompletionMenu" type="Node2D" unique_id=145366742]
 script = ExtResource("1_uu068")
-winProfit = 1800.0
+winProfit = 18000.0
 playerProfit = 10000.0
-noise_speed = 20.0
+noise_speed = 30.0
 
 [node name="Panel" type="Panel" parent="." unique_id=697622214]
 offset_left = -295.0

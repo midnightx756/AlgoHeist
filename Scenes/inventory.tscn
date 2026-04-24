@@ -88,8 +88,4 @@ max_text_lines = 8
 item_count = 1
 script = ExtResource("3_yxepq")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2083985528]
-zoom = Vector2(1.3, 1.3)
-limit_enabled = false
-
 [connection signal="item_activated" from="ItemList" to="." method="_on_item_list_item_activated"]

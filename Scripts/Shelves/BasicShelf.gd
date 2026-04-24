@@ -6,3 +6,18 @@ func returnItem():
 
 func loot():
 	pass
+
+func get_ShelfName():
+	pass
+
+func get_ShelfWeight():
+	pass
+
+func get_ShelfProfit():
+	pass
+
+func get_ShelfItem():
+	pass
+	
+func is_lootable():
+	return true

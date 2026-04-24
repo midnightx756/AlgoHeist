@@ -63,6 +63,6 @@ func _input(event):
 		if interaction_ray.is_colliding():
 			var object = interaction_ray.get_collider()
 			if object is BasicShelf:
-				object.loot() # This triggers the overridden loot() method!
+				GameManager.loot_shelf(object)
 			else:
 				print(object)

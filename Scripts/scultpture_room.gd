@@ -12,16 +12,20 @@ extends Node2D
 
 #preload the marker from the file system
 var marker := preload("res://Scenes/marker.tscn")
-
+var sculpArr = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.current_capacity = self.capacity 
+	sculpArr = statues.get_children()
+	var lol = {}
+	for i in sculpArr:
+		lol[i.Aname] = i.get_child(4)
+	GameManager.set_inventory_state(lol)
 	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
 
 #The function that processes loot
 func _on_loot_button_pressed():
-	var sculpArr = statues.get_children()
 	var statsArr = []
 	
 	var s:= 0

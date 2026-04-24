@@ -204,7 +204,7 @@ scale = Vector2(0.15, 0.15)
 [node name="Doge" parent="Painting Stands" unique_id=499393629 instance=ExtResource("1_1qarx")]
 position = Vector2(0, -1720)
 Painting = ExtResource("3_skd8e")
-Aname = "Doge"
+Aname = "Kabuso"
 
 [node name="Harambe" parent="Painting Stands" unique_id=1234204 instance=ExtResource("1_1qarx")]
 position = Vector2(913.33325, -1720)
@@ -221,62 +221,75 @@ position = Vector2(2626.6667, -1720)
 Painting = ExtResource("6_1c4wf")
 Aname = "Spanish Laughing Guy"
 
-[node name="HuhGirl" parent="Painting Stands" unique_id=1732200583 instance=ExtResource("1_1qarx")]
+[node name="SideEyeChloe" parent="Painting Stands" unique_id=1732200583 instance=ExtResource("1_1qarx")]
 position = Vector2(3540, -1720)
 Painting = ExtResource("7_ktf4l")
-Aname = "Huh Giel"
+Aname = "Chloe Clem"
 
 [node name="SusLook" parent="Painting Stands" unique_id=87904814 instance=ExtResource("1_1qarx")]
 position = Vector2(4420, -1720)
 Painting = ExtResource("8_533nd")
+Aname = "Philip J Fry"
 
 [node name="Kermit" parent="Painting Stands" unique_id=950208582 instance=ExtResource("1_1qarx")]
 position = Vector2(0, -926.6667)
 Painting = ExtResource("9_1c4wf")
+Aname = "Kermit the frog"
 
 [node name="GirlsAndCat" parent="Painting Stands" unique_id=1874907657 instance=ExtResource("1_1qarx")]
 position = Vector2(913.33325, -926.6667)
 Painting = ExtResource("10_ktf4l")
+Aname = "Girls Blaming cat"
 
 [node name="Disaster Girl" parent="Painting Stands" unique_id=1492365659 instance=ExtResource("1_1qarx")]
 position = Vector2(1793.3333, -926.6667)
 Painting = ExtResource("11_533nd")
+Aname = "Zoe Roth"
 
 [node name="Mike" parent="Painting Stands" unique_id=1939525912 instance=ExtResource("1_1qarx")]
 position = Vector2(2626.6667, -926.6667)
 Painting = ExtResource("12_533nd")
+Aname = "Mike Butowski"
 
 [node name="GrumpyCat" parent="Painting Stands" unique_id=347864950 instance=ExtResource("1_1qarx")]
 position = Vector2(3540, -926.6667)
 Painting = ExtResource("13_r211h")
+Aname = "Tardar Sauce "
 
 [node name="Look" parent="Painting Stands" unique_id=1967540802 instance=ExtResource("1_1qarx")]
 position = Vector2(4420, -926.6667)
 Painting = ExtResource("14_r211h")
+Aname = "Soyjacks"
 
 [node name="Minion" parent="Painting Stands" unique_id=1755555100 instance=ExtResource("1_1qarx")]
 position = Vector2(0, -39.99994)
 Painting = ExtResource("15_qruop")
+Aname = "Minion"
 
 [node name="Noooo" parent="Painting Stands" unique_id=819534781 instance=ExtResource("1_1qarx")]
 position = Vector2(913.33325, -39.99994)
 Painting = ExtResource("16_1qsor")
+Aname = "Micheal Scott"
 
 [node name="Pepe" parent="Painting Stands" unique_id=433707421 instance=ExtResource("1_1qarx")]
 position = Vector2(1793.3333, -39.99994)
 Painting = ExtResource("17_lq0jh")
+Aname = "Pepe"
 
 [node name="Pikachu" parent="Painting Stands" unique_id=670688536 instance=ExtResource("1_1qarx")]
 position = Vector2(2626.6667, -39.99994)
 Painting = ExtResource("18_iekam")
+Aname = "Pikachu"
 
 [node name="Mr Bean" parent="Painting Stands" unique_id=1592693362 instance=ExtResource("1_1qarx")]
 position = Vector2(3540, -39.99994)
 Painting = ExtResource("19_htfae")
+Aname = "Rowan Atkinson"
 
 [node name="Brains" parent="Painting Stands" unique_id=617107965 instance=ExtResource("1_1qarx")]
 position = Vector2(4420, -39.99994)
 Painting = ExtResource("20_777eu")
+Aname = "Roll Safe"
 
 [node name="LootButton" parent="." unique_id=1890356206 instance=ExtResource("23_iekam")]
 z_index = 13
@@ -284,6 +297,6 @@ y_sort_enabled = true
 position = Vector2(311, 341)
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=292247912]
-position = Vector2(0, 303)
+position = Vector2(0, 36)
 
 [connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]

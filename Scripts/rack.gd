@@ -14,6 +14,7 @@ func _ready() -> void:
 		did_contain = true
 		profit = randf_range(0.0, 100000)
 		weight = randi_range(0, 100)
+	#print(get_children())
 		
 
 func returnStats():
@@ -26,18 +27,20 @@ func returnStats():
 func returnPosition():
 	return global_position
 	
-func isLootable():
+func is_lootable():
 	return contains
 	
 func loot():
 	if(!contains): 
 		return 
 	contains = false
+	GameManager.update_loot_status(get_tree().current_scene.name, Aname, true)
 
 func returnItem():
-	if(!did_contain):
-		return 
+	#if(!did_contain):
+		#return 
 	contains = true
+	GameManager.update_loot_status(get_tree().current_scene.name, Aname, false)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass

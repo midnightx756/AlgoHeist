@@ -63,10 +63,10 @@ offset_right = 48.0
 offset_bottom = 128.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lf6xq")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1626181287]
+[node name="BasicShelf" type="StaticBody2D" parent="." unique_id=1626181287]
 script = ExtResource("2_qou7g")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1847761517]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BasicShelf" unique_id=1847761517]
 position = Vector2(0, 80)
 shape = SubResource("RectangleShape2D_mf115")
 

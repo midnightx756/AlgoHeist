@@ -7,7 +7,7 @@ extends BasicShelf
 @export var customPosition: Vector2 = global_position
 @export var Aname: String
 
-
+@onready var lootItem: Texture2D = null
 @onready var artifact_display: RichTextLabel = $"Artifact Display"
 @onready var artifact_keeper: Sprite2D = $"Artifact Holder/Artifact Keeper"
 @onready var artifact_holder: Panel = $"Artifact Holder"
@@ -17,19 +17,23 @@ var looted: bool = false
 func _ready() -> void:
 	if Aname != null && artifact != null:
 		artifact_keeper.texture = artifact
+		lootItem = artifact
 		artifact_keeper.global_position = customPosition
 		artifact_keeper.global_scale = customScale
 		weight = randi_range(1, 100)
 		profit = randf_range(0, 100000)
 		artifact_display.add_text("Name: " + Aname)
+	#print(get_child(4))
 
 func loot():
 	looted = true
 	artifact_holder.visible = false 
+	GameManager.update_loot_status(get_tree().current_scene.name, Aname, true)
 	
 func returnItem():
 	looted = false
 	artifact_holder.visible = true
+	GameManager.update_loot_status(get_tree().current_scene.name, Aname, false)
 
 func get_stats():
 	if(looted): return null 
@@ -41,3 +45,6 @@ func get_stats():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+	
+func is_lootable():
+	return !looted

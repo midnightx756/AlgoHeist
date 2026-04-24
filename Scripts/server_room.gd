@@ -8,7 +8,7 @@ extends Node2D
 @export var player_speed: int = 300
 
 var marker := preload("res://Scenes/marker.tscn")
-
+var room_registry = {}
 @onready var button := get_node("LootButton/Button")
 var serverArray
 # Called when the node enters the scene tree for the first time.
@@ -16,7 +16,13 @@ func _ready() -> void:
 	GameManager.current_capacity = self.capacity 
 	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
 	serverArray = servers.get_children()
-
+	for i in serverArray:
+		room_registry[i.Aname] =  i.get_child(0)
+	#print(room_registry)
+	GameManager.set_inventory_state(room_registry)
+	#print("SUMEMELAYU")
+	
+#function to call Knapsack when a button is pressed
 func _on_loot_button_pressed():
 	var statsArr = []
 	var s := 0

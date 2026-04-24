@@ -10,16 +10,20 @@ extends Node2D
 
 var maxSum = 0
 var marker := preload("res://Scenes/marker.tscn")
-
+var Array_Shelves : Array[Node] = []
 @onready var button := get_node("LootButton/Button")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.current_capacity = self.capacity 
+	Array_Shelves = painting_stands.get_children()
+	var lol = {}
+	for i in Array_Shelves:
+		lol[i.Aname] = i.get_child(0)
+	GameManager.set_inventory_state(lol)
 	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
 
 func _on_loot_button_pressed():
-	var Array_Shelves : Array[Node]= painting_stands.get_children()
 	var knapsackArray: Array[Dictionary] = [];
 	var s:=0
 	for shelf in Array_Shelves:
