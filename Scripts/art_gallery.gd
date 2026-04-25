@@ -17,11 +17,23 @@ var Array_Shelves : Array[Node] = []
 func _ready() -> void:
 	GameManager.current_capacity = self.capacity 
 	Array_Shelves = painting_stands.get_children()
+	var s = GameManager.set_room_state()
 	var lol = {}
 	for i in Array_Shelves:
 		lol[i.Aname] = i.get_child(0)
+		if(s == null or not i.Aname in s): continue
+		var t = s[i.Aname]
+		i.weight = t["Weight"]
+		i.profit = t["Profit"]
+		if not t["isLooted"]:
+			i.loot()
+		else:
+			i.is_looted = not t["isLooted"]
 	GameManager.set_inventory_state(lol)
 	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
+
+func get_collectibles():
+	return Array_Shelves
 
 func _on_loot_button_pressed():
 	var knapsackArray: Array[Dictionary] = [];

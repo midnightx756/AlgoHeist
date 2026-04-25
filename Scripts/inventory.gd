@@ -18,15 +18,16 @@ func updateLabels(newcap, newprof) -> void:
 	weightValueLabel.text = "%d/%d kg" % [newcap, capacity]
 	var profitValueLabel = profit_container.get_child(1)
 	profitValueLabel.text = "%.3f $" % newprof
-	
+
 func add_item_to_inventory(aname, weight, profit, shelf, icon):
 	if(item_list.getStats()["Weight"] + weight > capacity):
-		print("Item Csnnot be added, inventory is full")
-		return
+		print("Item Cannot be added, inventory is full, ",(item_list.getStats()["Weight"] + weight))
+		return false
 	var artifactd = ArtifactData.new()
 	artifactd.setup(aname, weight, profit, shelf, icon)
 	var stats = item_list.add_artifact_to_inventory(artifactd)
 	updateLabels(stats["Weight"], stats["Profit"])
+	return true
 	
 func _on_item_list_item_activated(index: int) -> void:
 	var artifact = item_list.get_item_metadata(index)
@@ -58,5 +59,6 @@ func return_inventory_stats_clear():
 	item_list.clear()
 	print("Done")
 	updateLabels(0,0.0)
+	item_list.reset()
 	return stats_arr
 	

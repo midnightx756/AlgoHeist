@@ -19,11 +19,22 @@ func _ready() -> void:
 	GameManager.current_capacity = self.capacity 
 	sculpArr = statues.get_children()
 	var lol = {}
+	var s = GameManager.set_room_state()
 	for i in sculpArr:
 		lol[i.Aname] = i.get_child(4)
+		if(s == null or not i.Aname in s): continue
+		var t = s[i.Aname]
+		i.weight = t["Weight"]
+		i.profit = t["Profit"]
+		if not t["isLooted"]:
+			i.loot()
+		else:
+			i.looted = not t["isLooted"]
 	GameManager.set_inventory_state(lol)
 	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
 
+func get_collectibles():
+	return sculpArr
 #The function that processes loot
 func _on_loot_button_pressed():
 	var statsArr = []
@@ -65,20 +76,24 @@ func Knapsack01(arr, size):
 				knapsackArr[i][w] = knapsackArr[i-1][w]
 				
 	print(knapsackArr[size][capacity])
-	
+	#print(capacity)
 	var i : int = size
 	var j : int = capacity
 	
 	while i > 0 and j > 0:
 		if(knapsackArr[i][j] != knapsackArr[i-1][j]):
-			j = j - arr[i-1]["Profit"]
-			loot.push_back(i-1)
+			loot.append(i-1)
+			j = j - arr[i-1]["Weight"]
 		i -= 1
+	print(loot)
 	return loot
 	
 	
 #Higlighting the most valuable artifacts
 func highlight(arr, indices):
+	for i in get_tree().get_nodes_in_group("Markers"):
+		i.free()
+	
 	for i in indices:
 		var markerr = marker.instantiate()
 		add_child(markerr)

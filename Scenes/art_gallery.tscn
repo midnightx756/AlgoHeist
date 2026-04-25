@@ -50,7 +50,7 @@ size = Vector2(10, 1.125)
 y_sort_enabled = true
 script = ExtResource("1_lq0jh")
 camera_zoom = Vector2(2, 2)
-player_speed = 70
+player_speed = 90
 
 [node name="Walls" type="Node2D" parent="." unique_id=560753129]
 position = Vector2(-399, -20)

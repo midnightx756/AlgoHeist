@@ -23,4 +23,7 @@ func _on_body_entered(_body: Node2D) -> void:
 	if _body.name == "Player":
 		# USE CALL_DEFERRED. This is non-negotiable.
 		GameManager.save_inventory_state()
+		var parent = get_parent().get_parent()
+		if(parent.has_method("get_collectibles")):
+			GameManager.save_room_state(parent.get_collectibles())
 		get_tree().root.get_node("MainGame").call_deferred("load_room", levelPath)

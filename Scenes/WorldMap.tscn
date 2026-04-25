@@ -31,7 +31,6 @@ shape = SubResource("RectangleShape2D_lgebn")
 position = Vector2(-68, 33)
 script = ExtResource("1_h0vor")
 room_id = "Sculpture"
-is_high_value = true
 scene_path = "res://Scenes/Scultpture_room.tscn"
 neighbors = [NodePath("../Gallery"), NodePath("../Server")]
 weights = Array[float]([500.0, 1000.0])

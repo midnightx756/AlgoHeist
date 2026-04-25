@@ -9,6 +9,12 @@ func add_artifact_to_inventory(data: ArtifactData):
 	return {"Weight" : curweight,
 			"Profit" : curval}
 
+#To reset the weights
+func reset():
+	curval = 0
+	curweight = 0
+
+#To update the item stats
 func updateItemStats():
 	var c:= 0
 	curval = 0

@@ -70,6 +70,7 @@ func _input(event):
 	if event.is_action_pressed("toggle_inventory"): # Assign 'I' in Input Map
 		var inventory = $UI/Inventory
 		inventory.visible = !inventory.visible
+		#print(inventory.capacity)
 		#get_tree().paused = inventory.visible
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -16,12 +16,22 @@ func _ready() -> void:
 	GameManager.current_capacity = self.capacity 
 	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
 	serverArray = servers.get_children()
+	var s = GameManager.set_room_state()
 	for i in serverArray:
 		room_registry[i.Aname] =  i.get_child(0)
+		if(s == null or not i.Aname in s): continue
+		var t = s[i.Aname]
+		#print(t)
+		i.weight = t["Weight"]
+		i.profit = t["Profit"]
+		i.contains = t["isLooted"]
 	#print(room_registry)
 	GameManager.set_inventory_state(room_registry)
 	#print("SUMEMELAYU")
-	
+
+func get_collectibles():
+	return serverArray
+
 #function to call Knapsack when a button is pressed
 func _on_loot_button_pressed():
 	var statsArr = []
@@ -75,7 +85,9 @@ func Knapsack(array, size):
 	return bestLoot
 	
 func Highlight(array, indices):
-	print("In Highlight")
+	#print("In Highlight")
+	for i in get_tree().get_nodes_in_group("Markers"):
+		i.free()
 	for i in indices:
 		var newm = marker.instantiate()
 		add_child(newm)
