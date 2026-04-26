@@ -52,3 +52,6 @@ func returnPosition():
 	
 func is_lootable():
 	return !is_looted
+	
+func lootStatus():
+	return !is_looted

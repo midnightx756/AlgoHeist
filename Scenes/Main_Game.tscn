@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://crbvyfmacr0pp" path="res://Scripts/GameManagement/MainGame.gd" id="1_u6rf3"]
 [ext_resource type="PackedScene" uid="uid://bvfq6btb43kuo" path="res://Scenes/WorldMap.tscn" id="2_u6rf3"]
 [ext_resource type="PackedScene" uid="uid://dq73kiyfk2npo" path="res://Scenes/Player.tscn" id="4_6quq6"]
+[ext_resource type="PackedScene" uid="uid://drg1e8qkoerle" path="res://Scenes/completion_menu.tscn" id="4_ndtwq"]
 
 [node name="MainGame" type="Node2D" unique_id=879337936]
 y_sort_enabled = true
@@ -19,6 +20,9 @@ script = ExtResource("1_u6rf3")
 visible = false
 
 [node name="Graphnodes" parent="UI" unique_id=942376435 instance=ExtResource("2_u6rf3")]
+visible = false
+
+[node name="CompletionMenu" parent="UI" unique_id=145366742 instance=ExtResource("4_ndtwq")]
 visible = false
 
 [node name="Player" parent="." unique_id=517162128 instance=ExtResource("4_6quq6")]

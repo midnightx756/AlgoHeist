@@ -30,6 +30,9 @@ func returnPosition():
 func is_lootable():
 	return contains
 	
+func lootStatus():
+	return contains
+	
 func loot():
 	if(!contains): 
 		return 

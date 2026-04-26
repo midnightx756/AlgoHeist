@@ -3,6 +3,7 @@ extends Node
 var is_terminal_hacked: bool = false
 var current_room_id: String = ""
 var current_capacity: int = 10
+var max_profit:= 0.0
 var inventory_save = {}
 var room_save = {}
 var loot_history = {}
@@ -104,9 +105,9 @@ func save_room_state(ShelfList):
 	if(!isRoomVisited()):
 		visited_rooms.append(current_room_id)
 	for i in ShelfList:
-		sr[i.Aname] = {"Weight": i.weight, "Profit": i.profit, "isLooted" : i.is_lootable()}
+		sr[i.Aname] = {"Weight": i.weight, "Profit": i.profit, "isLooted" : i.lootStatus()}
 	room_save[current_room_id] = sr
-	print(visited_rooms)
+	#print(visited_rooms)
 	#print(room_save)
 
 func set_room_state():

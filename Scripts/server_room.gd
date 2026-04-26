@@ -16,6 +16,8 @@ func _ready() -> void:
 	GameManager.current_capacity = self.capacity 
 	button.connect("pressed", Callable(self, "_on_loot_button_pressed"))
 	serverArray = servers.get_children()
+	if(not GameManager.isRoomVisited()):
+		GameManager.max_profit = GameManager.max_profit + assign_max()
 	var s = GameManager.set_room_state()
 	for i in serverArray:
 		room_registry[i.Aname] =  i.get_child(0)
@@ -95,6 +97,41 @@ func Highlight(array, indices):
 		newm.global_position = array[i]["Transform"]
 		newm.scale = Vector2(0.15, 0.15)
 		
+#function called once every game:
+func assign_max():
+	var statsArr = []
+	var s := 0
+	for i in serverArray:
+		var stat = i.returnStats()
+		if(stat != null):
+			#print(stat["Weight"], " ", stat["Profit"])
+			stat["Transform"] = i.returnPosition()
+			statsArr.append(stat)
+			s+=1
+		
+	if(statsArr == null):
+		print("Nothing to loot")
+		return
+		
+	var knapsackArray := []
+	for i in range(s + 1):
+		var loot = []
+		for j in range(capacity + 1):
+			loot.append(0)
+		knapsackArray.append(loot)
+		
+	for i in range(1, s +1):
+		for w in range(1, capacity + 1):
+			var weight = statsArr[i-1]["Weight"]
+			var profit = statsArr[i-1]["Profit"]
+			if weight <= w:
+				knapsackArray[i][w] = max(profit + knapsackArray[i-1][w - weight], knapsackArray[i-1][w])
+			else:
+				knapsackArray[i][w] = knapsackArray[i-1][w]
+				
+	print(knapsackArray[s][capacity])	
+	return knapsackArray[s][capacity]
+	
 # The orchestrator calls this
 func get_room_settings():
 	return {"zoom": camera_zoom, "speed": player_speed, "scale": player_zoom}

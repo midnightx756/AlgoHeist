@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://gcdbant8xyak"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bna1"]
+bg_color = Color(0.7260352, 0.7260353, 0.72603506, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.50403124, 0.5040308, 0.5040309, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lordj"]
+bg_color = Color(0, 0.69198066, 0.6473559, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 4
+border_color = Color(1.3235956e-06, 0.40713176, 0.38038042, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gw7qu"]
+bg_color = Color(5.2943824e-07, 0.45879018, 0.4290484, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh5ww"]
+bg_color = Color(1.2321472e-05, 0.8482448, 0.7959588, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 4
+border_color = Color(3.7541986e-06, 0.7410546, 0.69612074, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4mx5"]
+
+[node name="EndButton" type="Panel" unique_id=1566199917]
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bna1")
+
+[node name="Button" type="Button" parent="." unique_id=1251110943]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 90.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_lordj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gw7qu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uh5ww")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_e4mx5")
+text = "END!"

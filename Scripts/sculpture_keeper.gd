@@ -48,3 +48,6 @@ func _process(_delta: float) -> void:
 	
 func is_lootable():
 	return !looted
+
+func lootStatus():
+	return !looted

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://s3sc7jwrnwc1" path="res://Assets/Sprites/MrBean.png" id="4_nnt0k"]
 [ext_resource type="Texture2D" uid="uid://ck520vv5d4fvo" path="res://Assets/Sprites/GuennolLioness.jpg" id="5_ovel5"]
 [ext_resource type="Texture2D" uid="uid://cxxj1gickcn07" path="res://Assets/Sprites/ServerBlade.jpg" id="6_6g17r"]
+[ext_resource type="PackedScene" uid="uid://gcdbant8xyak" path="res://Scenes/end_button.tscn" id="6_k2sq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgebn"]
 
@@ -62,3 +63,9 @@ shape = SubResource("RectangleShape2D_lgebn")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=496957165]
 position = Vector2(53, 27)
 zoom = Vector2(2, 2)
+
+[node name="EndButton" parent="." unique_id=1566199917 instance=ExtResource("6_k2sq4")]
+offset_left = -230.0
+offset_top = 87.0
+offset_right = -130.0
+offset_bottom = 187.0

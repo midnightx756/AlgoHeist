@@ -72,7 +72,31 @@ func _input(event):
 		inventory.visible = !inventory.visible
 		#print(inventory.capacity)
 		#get_tree().paused = inventory.visible
-		
+	
+func open_final_menu():
+	if(GameManager.visited_rooms.size() != 3):
+		print("Visit all the rooms first")
+		return
+
+	#Calaculate player profit
+	var menu:= $UI/CompletionMenu
+	var pp := 0
+	for id in GameManager.inventory_save:
+		for roi in GameManager.inventory_save[id]:
+			pp += roi["Profit"]
+	#var screen_size = get_viewport_rect().size
+	#menu.global_position = screen_size / 2
+	
+	#Send stats
+	menu.updateLabels(GameManager.max_profit, pp)
+	menu.display()
+	#print(GameManager.max_profit)
+	await get_tree().create_timer(1).timeout
+	menu.visible = true
+	#var camera = menu.get_child(1)
+	#camera.make_current()
+	$SceneContainer.process_mode = Node.PROCESS_MODE_DISABLED
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass

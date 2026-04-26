@@ -1,8 +1,11 @@
 extends Node2D
 
+@onready var end_button: Button = $EndButton/Button
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#await get_tree().create_timer(2.0).timeout
+	end_button.connect("pressed", Callable(self, "_on_end_button_pressed"))
 	draw_edges()
 
 
@@ -50,3 +53,9 @@ func draw_edges():
 				add_child(line)
 			else:
 				print("DEBUG: Neighbor is null at index ", i)
+				
+func _on_end_button_pressed():
+	# Signal the MainGame that we want to finish
+	# We reach up to MainGame because it owns the UI and the Data
+	var main_game = get_tree().root.get_node("MainGame")
+	main_game.open_final_menu()

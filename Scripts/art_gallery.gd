@@ -17,6 +17,9 @@ var Array_Shelves : Array[Node] = []
 func _ready() -> void:
 	GameManager.current_capacity = self.capacity 
 	Array_Shelves = painting_stands.get_children()
+	if(!GameManager.isRoomVisited()):
+		#print("Calculating max weight")
+		GameManager.max_profit = GameManager.max_profit +  assign_max()
 	var s = GameManager.set_room_state()
 	var lol = {}
 	for i in Array_Shelves:
@@ -42,7 +45,7 @@ func _on_loot_button_pressed():
 		var stats = shelf.get_stats()
 		if(stats != null):
 			stats["Transform"] = shelf.returnPosition()
-			print(stats["Weight"], " ", stats["Profit"], stats["Transform"])
+			#print(stats["Weight"], " ", stats["Profit"], stats["Transform"])
 			knapsackArray.append(stats)
 			s += 1
 	
@@ -103,6 +106,44 @@ func Highlight(baseArr, lootArr):
 		new_marker.position = baseArr[i]["Transform"]
 		add_child(new_marker)
 			
+#A one time called function:
+func assign_max():
+	var knapsackArray: Array[Dictionary] = [];
+	var s:=0
+	for shelf in Array_Shelves:
+		var stats = shelf.get_stats()
+		if(stats != null):
+			stats["Transform"] = shelf.returnPosition()
+			#print(stats["Weight"], " ", stats["Profit"], stats["Transform"])
+			knapsackArray.append(stats)
+			s += 1
+			
+	if(knapsackArray.is_empty()):
+		print("Room is empty")
+		return
+	
+	# Initialize DP Table (size + 1 rows, capacity + 1 columns)
+	var Arr2d = []
+	for x in range(s + 1):
+		var row = []
+		for y in range(capacity + 1):
+			row.append(0)
+		Arr2d.append(row)
+	
+	# Fill DP Table
+	# We use 1 to size to represent items. arr[i-1] accesses the item.
+	for i in range(1, s + 1):
+		for w in range(0, capacity + 1):
+			var weight = knapsackArray[i-1]["Weight"]
+			var profit = knapsackArray[i-1]["Profit"]
+			
+			if weight <= w:
+				# Compare taking vs not taking
+				Arr2d[i][w] = max(profit + Arr2d[i-1][w - int(weight)], Arr2d[i-1][w])
+			else:
+				Arr2d[i][w] = Arr2d[i-1][w]
+	
+	return Arr2d[s][capacity]
 # The orchestrator calls this
 func get_room_settings():
 	return {"zoom": camera_zoom, "speed": player_speed, "scale" : player_zoom}

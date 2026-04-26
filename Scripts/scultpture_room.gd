@@ -19,6 +19,8 @@ func _ready() -> void:
 	GameManager.current_capacity = self.capacity 
 	sculpArr = statues.get_children()
 	var lol = {}
+	if(not GameManager.isRoomVisited()):
+		GameManager.max_profit = GameManager.max_profit + assign_max()
 	var s = GameManager.set_room_state()
 	for i in sculpArr:
 		lol[i.Aname] = i.get_child(4)
@@ -99,6 +101,41 @@ func highlight(arr, indices):
 		add_child(markerr)
 		markerr.global_position = arr[i]["Transform"]
 
+#function to assign max value to the scoreboard
+func assign_max():
+	var statsArr = []
+	
+	var s:= 0
+	for sculp in sculpArr:
+		var sc = sculp.get_stats()
+		if(sc != null):
+			statsArr.push_back(sc)
+			s+=1
+			
+	if(statsArr.is_empty()):
+		print("Loot has been made")
+		return 
+	
+	var knapsackArr: Array[Array]= []
+	for i in range(s+1):
+		var l = []
+		for j in range(capacity+1):
+			l.push_back(0)
+		knapsackArr.push_back(l)
+		
+	for i in range(1, s+1):
+		for w in range(1, capacity + 1):
+			var weight = statsArr[i-1]["Weight"]
+			var profit = statsArr[i-1]["Profit"]
+			
+			if(weight <= w):
+				knapsackArr[i][w] = max(knapsackArr[i-1][w], knapsackArr[i-1][w - weight] + profit)
+			else:
+				knapsackArr[i][w] = knapsackArr[i-1][w]
+				
+	#print(knapsackArr[s][capacity])
+	return knapsackArr[s][capacity]
+	
 # The orchestrator calls this
 func get_room_settings():
 	return {"zoom": camera_zoom, "speed": player_speed, "scale" : player_zoom}
