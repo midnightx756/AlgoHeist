@@ -78,7 +78,7 @@ func open_final_menu():
 		print("Visit all the rooms first")
 		return
 
-	#Calaculate player profit
+	#Calaculate player profits
 	var menu:= $UI/CompletionMenu
 	var pp := 0
 	for id in GameManager.inventory_save:

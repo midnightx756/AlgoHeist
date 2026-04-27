@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://w1pt8aw611fy"]
+
+[ext_resource type="Script" uid="uid://djr5mkkofae3m" path="res://Scripts/Terminal/hackerterminal.gd" id="1_b6da8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d8xi"]
+bg_color = Color(0.69135684, 0.6913568, 0.6913567, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6da8"]
+bg_color = Color(0.0006938975, 0.0006938978, 0.00069389684, 1)
+
+[node name="hackerterminal" type="Control" unique_id=1318020669]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b6da8")
+
+[node name="Panel" type="Panel" parent="." unique_id=987603379]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 150)
+theme_override_styles/panel = SubResource("StyleBoxFlat_4d8xi")
+
+[node name="Text" type="LineEdit" parent="Panel" unique_id=1978564675]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pattern" type="LineEdit" parent="Panel" unique_id=2005086610]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+editable = false
+
+[node name="Search" type="Button" parent="Panel" unique_id=2087861787]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="PANEL 2" type="Panel" parent="Panel" unique_id=2144430720]
+layout_mode = 0
+offset_left = -275.0
+offset_top = -175.0
+offset_right = 275.0
+offset_bottom = 175.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b6da8")
+
+[node name="Result" type="Label" parent="Panel/PANEL 2" unique_id=1009069509]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PANEL" type="Node2D" parent="Panel" unique_id=803584400]
+
+[node name="main" type="Node" parent="." unique_id=516084138]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main" unique_id=1236625329]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Panel/Search" to="." method="_on_search_button_pressed"]

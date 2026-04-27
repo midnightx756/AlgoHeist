@@ -64,5 +64,7 @@ func _input(event):
 			var object = interaction_ray.get_collider()
 			if object is BasicShelf:
 				GameManager.loot_shelf(object)
+			elif object is Computer: # <--- NEW CHECK
+				object.start_hack()
 			else:
 				print(object)
