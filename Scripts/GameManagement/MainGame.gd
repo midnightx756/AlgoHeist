@@ -74,7 +74,7 @@ func _input(event):
 		#get_tree().paused = inventory.visible
 	
 func open_final_menu():
-	if(GameManager.visited_rooms.size() != 3):
+	if(GameManager.visited_rooms.size() < 4):
 		print("Visit all the rooms first")
 		return
 

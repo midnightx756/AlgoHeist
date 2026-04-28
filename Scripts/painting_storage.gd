@@ -16,7 +16,7 @@ func _ready() -> void:
 	lootItem = Painting
 	var rng = RandomNumberGenerator.new()
 	weight = rng.randi_range(1, 15)
-	profit = rng.randf_range(100, 1000)
+	profit = rng.randf_range(10000, 100000)
 	#print(get_child(0))
 	if(Painting != null):
 		var panelsize = panel.size

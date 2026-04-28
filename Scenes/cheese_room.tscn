@@ -1,0 +1,236 @@
+[gd_scene format=3 uid="uid://duo1o8sl3oki7"]
+
+[ext_resource type="Script" uid="uid://c64rm2r4hqcqd" path="res://Scripts/cheese_room.gd" id="1_1fcwm"]
+[ext_resource type="Script" uid="uid://b6qt1584i7iqu" path="res://Scripts/Level_change.gd" id="1_ynloc"]
+[ext_resource type="PackedScene" uid="uid://c0sbli17rtfrf" path="res://Scenes/cheese_rack.tscn" id="2_1dnx7"]
+[ext_resource type="Texture2D" uid="uid://bog5kksrs0s3u" path="res://Assets/Sprites/MidnightMoon.jpg" id="3_uowh3"]
+[ext_resource type="Texture2D" uid="uid://pduvsm45bf6u" path="res://Assets/Sprites/BabySwiss.jpg" id="4_d5quy"]
+[ext_resource type="Texture2D" uid="uid://t8dyo4u4v5tw" path="res://Assets/Sprites/Allegretto.jpg" id="5_pulru"]
+[ext_resource type="Texture2D" uid="uid://bqcw7iayoxa0n" path="res://Assets/Sprites/FlorysTruckle.jpg" id="6_1fcwm"]
+[ext_resource type="Texture2D" uid="uid://bwyybpgwiiqvi" path="res://Assets/Sprites/CabotClothbound.jpg" id="7_minrn"]
+[ext_resource type="PackedScene" uid="uid://oc0in4q4e88s" path="res://Scenes/loot_button.tscn" id="9_minrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dnx7"]
+size = Vector2(99.875, 1.046875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uowh3"]
+size = Vector2(0.9375, 48.96875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5quy"]
+size = Vector2(1.015625, 49.046875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsewk"]
+size = Vector2(45, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_114dy"]
+size = Vector2(10, 1.125)
+
+[node name="CheeseRoom" type="Node2D" unique_id=1392235630]
+script = ExtResource("1_1fcwm")
+player_zoom = Vector2(0.2, 0.2)
+camera_zoom = Vector2(7, 7)
+player_speed = 20
+
+[node name="Walls" type="Node2D" parent="." unique_id=185557166]
+position = Vector2(-50, -20)
+
+[node name="Floor" type="ColorRect" parent="Walls" unique_id=1159235578]
+z_index = -8
+offset_top = 1.0
+offset_right = 100.0
+offset_bottom = 49.0
+color = Color(0.5222904, 0.23234361, 0.12772346, 1)
+
+[node name="Top Wall" type="ColorRect" parent="Walls" unique_id=148954904]
+z_index = -6
+offset_top = -19.390625
+offset_right = 100.0
+offset_bottom = 0.609375
+color = Color(0.5764706, 0.47058824, 0, 1)
+
+[node name="Thickness of top wall" type="ColorRect" parent="Walls" unique_id=1075097582]
+z_index = -5
+offset_left = -0.046875
+offset_top = -18.9375
+offset_right = 99.953125
+offset_bottom = -17.9375
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Right Wall" type="ColorRect" parent="Walls" unique_id=360107101]
+z_index = -5
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 99.0
+offset_top = -19.0625
+offset_right = 100.0
+offset_bottom = 20.9375
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1, 1.475625)
+color = Color(0.80416864, 0.6193118, 0.13859153, 1)
+
+[node name="Left Wall" type="ColorRect" parent="Walls" unique_id=57711395]
+z_index = -5
+offset_top = -18.9375
+offset_right = 1.0
+offset_bottom = 21.0625
+scale = Vector2(1, 1.4725001)
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Bottom wall" type="ColorRect" parent="Walls" unique_id=979317977]
+z_index = 9
+y_sort_enabled = true
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 39.0
+offset_right = 45.0
+offset_bottom = 49.0
+grow_vertical = 0
+color = Color(0.5764706, 0.47058824, 0, 1)
+
+[node name="Bottom wall thickness" type="ColorRect" parent="Walls" unique_id=2044219794]
+z_index = 9
+y_sort_enabled = true
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 38.90625
+offset_right = 45.0
+offset_bottom = 39.90625
+grow_vertical = 0
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Bottom wall2" type="ColorRect" parent="Walls" unique_id=986369621]
+z_index = 9
+y_sort_enabled = true
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 39.0
+offset_right = 100.0
+offset_bottom = 49.0
+grow_vertical = 0
+color = Color(0.5764706, 0.47058824, 0, 1)
+
+[node name="Bottom wall thickness2" type="ColorRect" parent="Walls" unique_id=1196866739]
+z_index = 9
+y_sort_enabled = true
+custom_minimum_size = Vector2(0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 38.90625
+offset_right = 100.0
+offset_bottom = 39.90625
+grow_vertical = 0
+color = Color(0.8039216, 0.61960787, 0.13725491, 1)
+
+[node name="Collider" type="StaticBody2D" parent="Walls" unique_id=1782881046]
+
+[node name="Back" type="CollisionShape2D" parent="Walls/Collider" unique_id=1357246709]
+position = Vector2(50.078125, 0.546875)
+shape = SubResource("RectangleShape2D_1dnx7")
+debug_color = Color(0.8045305, 0.4150963, 0.11233396, 0.41960785)
+
+[node name="Left" type="CollisionShape2D" parent="Walls/Collider" unique_id=1510033412]
+position = Vector2(0.515625, 24.53125)
+shape = SubResource("RectangleShape2D_uowh3")
+debug_color = Color(0.87120444, 0.34801129, 0.08871875, 0.41960785)
+
+[node name="Right" type="CollisionShape2D" parent="Walls/Collider" unique_id=2021804758]
+position = Vector2(99.50781, 24.492188)
+shape = SubResource("RectangleShape2D_d5quy")
+debug_color = Color(0.7674996, 0.44600385, 0.0839582, 0.41960785)
+
+[node name="Front" type="CollisionShape2D" parent="Walls/Collider" unique_id=829775924]
+position = Vector2(22.5, 48.5)
+shape = SubResource("RectangleShape2D_fsewk")
+
+[node name="Front2" type="CollisionShape2D" parent="Walls/Collider" unique_id=2025027903]
+position = Vector2(77.5, 48.5)
+shape = SubResource("RectangleShape2D_fsewk")
+
+[node name="Area2D" type="Area2D" parent="Walls" unique_id=1950883467]
+position = Vector2(50, 48.125)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_ynloc")
+levelPath = "res://Scenes/WorldMap.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=1870216770]
+position = Vector2(0, 0.3)
+shape = SubResource("RectangleShape2D_114dy")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=220307693]
+position = Vector2(-13, -9)
+
+[node name="Shelves" type="Node2D" parent="." unique_id=884934521]
+
+[node name="Midnight Moon" parent="Shelves" unique_id=1125120581 instance=ExtResource("2_1dnx7")]
+position = Vector2(-42, -9.536743e-07)
+scale = Vector2(0.06, 0.06)
+item = ExtResource("3_uowh3")
+weight = 2
+profit = 5027.032024300359
+Aname = "Midnight Moon"
+og_scale = Vector2(0.5, 0.5)
+og_positiom = Vector2(0, -140)
+
+[node name="Baby Swiss" parent="Shelves" unique_id=1905136198 instance=ExtResource("2_1dnx7")]
+position = Vector2(-22, -9.536743e-07)
+scale = Vector2(0.06, 0.06)
+item = ExtResource("4_d5quy")
+weight = 5
+profit = 7954.0522474627
+Aname = "Baby Swiss"
+og_scale = Vector2(0.55, 0.55)
+og_positiom = Vector2(0, -140)
+
+[node name="Allegretto" parent="Shelves" unique_id=843976759 instance=ExtResource("2_1dnx7")]
+position = Vector2(-2.3841858e-07, -9.536743e-07)
+scale = Vector2(0.06, 0.06)
+item = ExtResource("5_pulru")
+weight = 5
+profit = 6679.322867085721
+Aname = "Allegretto"
+og_scale = Vector2(0.5, 0.5)
+og_positiom = Vector2(0, -150)
+
+[node name="Florys Truckle" parent="Shelves" unique_id=871243132 instance=ExtResource("2_1dnx7")]
+position = Vector2(36.999992, -9.536743e-07)
+scale = Vector2(0.06, 0.06)
+item = ExtResource("6_1fcwm")
+weight = 5
+profit = 9559.384723880576
+Aname = "Flory's truckle"
+og_scale = Vector2(0.1, 0.1)
+og_positiom = Vector2(0, -140)
+
+[node name="Cabot Clothbound" parent="Shelves" unique_id=1984917951 instance=ExtResource("2_1dnx7")]
+position = Vector2(19.000006, -9.536743e-07)
+scale = Vector2(0.06, 0.06)
+item = ExtResource("7_minrn")
+weight = 5
+profit = 9754.860678200093
+Aname = "Cabot Clothound"
+og_scale = Vector2(0.1, 0.1)
+og_positiom = Vector2(0, -140)
+
+[node name="LootButton" parent="." unique_id=1890356206 instance=ExtResource("9_minrn")]
+z_index = 16
+position = Vector2(39, 24.5)
+scale = Vector2(0.3, 0.3)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1298435863]
+zoom = Vector2(8, 8)
+
+[connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]

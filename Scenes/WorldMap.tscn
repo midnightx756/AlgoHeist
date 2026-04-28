@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://s3sc7jwrnwc1" path="res://Assets/Sprites/MrBean.png" id="4_nnt0k"]
 [ext_resource type="Texture2D" uid="uid://ck520vv5d4fvo" path="res://Assets/Sprites/GuennolLioness.jpg" id="5_ovel5"]
 [ext_resource type="Texture2D" uid="uid://cxxj1gickcn07" path="res://Assets/Sprites/ServerBlade.jpg" id="6_6g17r"]
+[ext_resource type="Texture2D" uid="uid://bog5kksrs0s3u" path="res://Assets/Sprites/MidnightMoon.jpg" id="6_e6b1v"]
 [ext_resource type="PackedScene" uid="uid://gcdbant8xyak" path="res://Scenes/end_button.tscn" id="6_k2sq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgebn"]
@@ -13,7 +14,7 @@
 script = ExtResource("1_lgebn")
 
 [node name="Gallery" type="Area2D" parent="." unique_id=1225988341 node_paths=PackedStringArray("neighbors")]
-position = Vector2(120, -58)
+position = Vector2(232, -58)
 script = ExtResource("1_h0vor")
 room_id = "Gallery"
 scene_path = "res://Scenes/art_gallery.tscn"
@@ -29,12 +30,12 @@ z_index = 1
 shape = SubResource("RectangleShape2D_lgebn")
 
 [node name="Sculpture" type="Area2D" parent="." unique_id=1469447402 node_paths=PackedStringArray("neighbors")]
-position = Vector2(-68, 33)
+position = Vector2(-68, -56)
 script = ExtResource("1_h0vor")
 room_id = "Sculpture"
-scene_path = "res://Scenes/Scultpture_room.tscn"
-neighbors = [NodePath("../Gallery"), NodePath("../Server")]
-weights = Array[float]([500.0, 1000.0])
+scene_path = "uid://piotcij3n0l1"
+neighbors = [NodePath("../Gallery"), NodePath("../Server"), NodePath("../Cheese")]
+weights = Array[float]([500.0, 1000.0, 3000.0])
 
 [node name="Sprite2D" type="Sprite2D" parent="Sculpture" unique_id=1950153298]
 scale = Vector2(0.2, 0.2)
@@ -45,18 +46,34 @@ z_index = 1
 shape = SubResource("RectangleShape2D_lgebn")
 
 [node name="Server" type="Area2D" parent="." unique_id=319231009 node_paths=PackedStringArray("neighbors")]
-position = Vector2(185, 50)
+position = Vector2(128, 50)
 script = ExtResource("1_h0vor")
 room_id = "Server"
-scene_path = "res://Scenes/ServerRoom.tscn"
-neighbors = [NodePath("../Gallery"), NodePath("../Sculpture")]
-weights = Array[float]([1000.0, 1000.0])
+scene_path = "uid://cyf2ktfuo1ne7"
+neighbors = [NodePath("../Gallery"), NodePath("../Sculpture"), NodePath("../Cheese")]
+weights = Array[float]([1000.0, 1000.0, 100.0])
 
 [node name="Sprite2D" type="Sprite2D" parent="Server" unique_id=1366071757]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_6g17r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Server" unique_id=648465190]
+z_index = 1
+shape = SubResource("RectangleShape2D_lgebn")
+
+[node name="Cheese" type="Area2D" parent="." unique_id=2035438528 node_paths=PackedStringArray("neighbors")]
+position = Vector2(56, 144)
+script = ExtResource("1_h0vor")
+room_id = "Cheese"
+scene_path = "uid://duo1o8sl3oki7"
+neighbors = [NodePath("../Sculpture"), NodePath("../Server")]
+weights = Array[float]([3000.0, 100.0])
+
+[node name="Sprite2D" type="Sprite2D" parent="Cheese" unique_id=120469825]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_e6b1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cheese" unique_id=1188160443]
 z_index = 1
 shape = SubResource("RectangleShape2D_lgebn")
 

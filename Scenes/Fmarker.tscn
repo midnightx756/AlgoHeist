@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://njm7f30ro6sc"]
+
+[ext_resource type="FontFile" uid="uid://by5ovinea2qhs" path="res://Assets/Fonts/alagard.ttf" id="1_76aj5"]
+[ext_resource type="Script" uid="uid://0x2bmrihljj0" path="res://Scripts/fmarker.gd" id="2_4d2n0"]
+
+[node name="Label" type="Label" unique_id=134479034 groups=["Markers"]]
+z_index = 100
+offset_left = -11.0
+offset_top = -21.0
+offset_right = 11.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("1_76aj5")
+theme_override_font_sizes/font_size = 23
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_4d2n0")
