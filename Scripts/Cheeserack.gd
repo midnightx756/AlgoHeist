@@ -25,7 +25,7 @@ func returnStats():
 	
 func loot():
 	contains += 1
-	sprite_2d.scale = Vector2(contains/float(weight), contains/float(weight))
+	sprite_2d.scale = Vector2(1 - contains/float(weight), 1 - contains/float(weight))
 	
 func returnItem():
 	contains = 0
