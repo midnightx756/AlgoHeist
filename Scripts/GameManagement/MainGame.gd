@@ -3,10 +3,12 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var map_camera: Node2D = $UI/Graphnodes/Camera2D
 @onready var scene_container: Node2D = $SceneContainer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_room("res://Scenes/WorldMap.tscn")
-	
+
+#Function to load a room
 func load_room(path: String):
 	# This call_deferred is the ONLY way to prevent the physics crash
 	call_deferred("_swap_scene", path)

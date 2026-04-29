@@ -35,6 +35,10 @@ func _on_search_pressed():
 	# 3. Update the Result label
 	if found_at != -1:
 		result_label.text = "KEY FOUND AT INDEX: " + str(found_at)
+		
+		await get_tree().create_timer(1.0).timeout 
+		GameManager.on_hacking_complete(true)
+
 	else:
 		result_label.text = "SEARCH FAILED: KEY NOT FOUND"
 

@@ -300,4 +300,8 @@ position = Vector2(311, 341)
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=292247912]
 position = Vector2(0, 36)
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=54939376]
+position = Vector2(0, 112)
+zoom = Vector2(1.15, 1.15)
+
 [connection signal="body_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_body_entered"]

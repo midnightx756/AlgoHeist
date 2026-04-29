@@ -10,6 +10,10 @@ var loot_history = {}
 var visited_rooms = []
 # This holds the UI reference so we can call its methods
 var inventory_ui: Node2D = null 
+var hacker_terminal: Node = null # Reference to the UI node
+
+func find_terminal_node():
+	hacker_terminal = get_tree().root.get_node_or_null("MainGame/UI/hackerterminal")
 
 func find_ui_node():
 	inventory_ui = get_tree().root.get_node_or_null("MainGame/UI/Inventory")
@@ -116,15 +120,32 @@ func save_room_state(ShelfList):
 	#print(visited_rooms)
 	#print(room_save)
 
+#Set the room state
 func set_room_state():
 	if not current_room_id in room_save:
 		print("Entered for the first time")
 		return {}
 	return room_save[current_room_id]
+	
+#termina use functinos
+func open_hacker_terminal():
+	if hacker_terminal:
+		hacker_terminal.visible = true
+		# Optional: Pause game while hacking
+		#get_tree().paused = true
+
+func on_hacking_complete(success: bool):
+	if success:
+		is_terminal_hacked = true
+		#print("SYSTEM OVERRIDE: Vault Access Granted")
+	
+	hacker_terminal.visible = false
+	get_tree().paused = false
 
 func _ready() -> void:
 	# Use call_deferred to find the node AFTER the game world loads
 	call_deferred("find_ui_node")
+	call_deferred("find_terminal_node")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
