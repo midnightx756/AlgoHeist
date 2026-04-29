@@ -17,7 +17,7 @@ script = ExtResource("1_lgebn")
 position = Vector2(232, -58)
 script = ExtResource("1_h0vor")
 room_id = "Gallery"
-scene_path = "res://Scenes/art_gallery.tscn"
+scene_path = "uid://bilchrafuqfdx"
 neighbors = [NodePath("."), NodePath("../Server")]
 weights = Array[float]([500.0, 1000.0])
 

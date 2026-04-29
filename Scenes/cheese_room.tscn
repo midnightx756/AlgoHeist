@@ -27,7 +27,7 @@ size = Vector2(10, 1.125)
 
 [node name="CheeseRoom" type="Node2D" unique_id=1392235630]
 script = ExtResource("1_1fcwm")
-player_zoom = Vector2(0.25, 0.25)
+player_zoom = Vector2(0.15, 0.15)
 camera_zoom = Vector2(14, 14)
 player_speed = 20
 
