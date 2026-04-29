@@ -20,12 +20,18 @@ func find_ui_node():
 func loot_shelf(shelf: BasicShelf):
 	if !shelf.is_lootable():
 		return
+		
 	# Add to UI
 	var r: bool = false
 	if inventory_ui:
-		r = inventory_ui.add_item_to_inventory(shelf.get_ShelfName(), shelf.get_ShelfWeight(), shelf.get_ShelfProfit(), shelf, shelf.get_ShelfItem())
+		if(current_room_id == "Cheese"):
+			r = inventory_ui.add_item_to_inventory(shelf.get_ShelfName(), 1, (1.0/shelf.get_ShelfWeight())*shelf.get_ShelfProfit(), shelf, shelf.get_ShelfItem())
+		else:
+			r = inventory_ui.add_item_to_inventory(shelf.get_ShelfName(), shelf.get_ShelfWeight(), shelf.get_ShelfProfit(), shelf, shelf.get_ShelfItem())
 	else:
 		print("UI Could not be found")
+	
+	#Loot only if item wsas added
 	if(r):
 		shelf.loot() # Updates visual/state in room
 	else:
